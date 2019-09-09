@@ -519,3 +519,23 @@ categories: # 文章分类，本主题的分类表示宏观上大的分类，只
 ## 部署的项目主页添加 `README`
 
 在部署的项目到 Github 上建立自己的博客仓库的时候并没有生成 README 文件，为此，我们需要在 `/docs/source`下手动新建 `README.md`。然后再在这个新建文件中写 `README` 即可。再之后 `hexo g` 会把它复制到 `/docs/public` 文件夹，而不会被解析成 html 文件，发布在博客中。
+
+## 创建新的页面
+
+首先运行如下命令，生成 :book: 页面：
+
+```sh
+$ hexo new page board
+```
+
+系统会自动给你在 `/docs/source` 文件夹下创建一个 `book` 文件夹，以及 `book` 文件夹中的 `index.md`，这样你访问的 `book` 对应的链接就是 `http://xxx.xxx/book`。
+
+然后在主题配置文件的 `menu` 菜单栏添加一个 `Yourdiy : /yourdiy`，注意冒号后面要有空格，以及前面的空格要和 `menu` 中默认的保持整齐。然后在 `languages` 文件夹中，找到 `zh-CN.yml`，在 `index` 中添加 `yourdiy: '中文意思'` 就可以显示中文了。
+
+比如在 `zh-CN.yml` 中添加：`book: 书籍`，在 `menu` 菜单栏中添加：
+
+```yml
+书籍:
+    url: /book
+    icon: fa-book
+```
