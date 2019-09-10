@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title>S</title>
-      <link href="/zh-CN/2060efc3.html"/>
-      <url>/zh-CN/2060efc3.html</url>
-      
-        <content type="html"><![CDATA[<p><span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f4d6.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d6.png?v8">📖</span> 手机号</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>github 编写 README 时如何获取 fork 等图标</title>
       <link href="/zh-CN/f7c6a6b8.html"/>
       <url>/zh-CN/f7c6a6b8.html</url>
