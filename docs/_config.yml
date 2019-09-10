@@ -97,7 +97,7 @@ prism_plugin:
   custom_css:
 
 # 添加emoji表情支持
-## yarn add hexo-filter-github-emojis
+## npm install hexo-filter-github-emojis --save
 githubEmojis:
   enable: true
   className: github-emoji

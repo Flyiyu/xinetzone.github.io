@@ -22,9 +22,6 @@ menu:
   Friends:
     url: /friends
     icon: fa-address-book
-  hexo-theme:
-    url: /hexo-theme
-    icon: fa-book
 
 # Website start time.
 # 站点运行开始时间.
