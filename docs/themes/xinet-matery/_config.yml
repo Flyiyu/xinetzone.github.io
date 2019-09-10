@@ -221,9 +221,6 @@ mySkills:
     网页:
       background: 'linear-gradient(to right, #9196F3 0%, #47AFF5 100%)'
       percent: 20%
-    Git:
-      background: 'linear-gradient(to right, #7796F3 0%, #47AFF5 100%)'
-      percent: 60%
 
 # config gallery of my photos in about page.
 # If you don't want to display this `Gallery` content, you can deactivate or delete this configuration.
