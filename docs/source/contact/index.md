@@ -14,13 +14,7 @@ updated: 2019-09-11 07:25:21
 
 ## 友链
 
----
-刘新伟の友链信息
+刘新伟：
 
-博客名称: 刘新伟の博客
-
-博客网址: <https://www.cnblogs.com/q735613050/>
-
-博客头像:
-
-博客介绍: CVer！
+- [简书](https://www.jianshu.com/u/4302480a3e8e)
+- [博客园](https://www.cnblogs.com/q735613050/)
