@@ -12,12 +12,15 @@
 
 
 
+
  
+
 
 那么该如何生成上面的图标效果呢？首先，我们可以借由 http://hits.dwyl.io/ 网站来获取 hits 数：
 
+
 只需要修改
-[![Hi">
+[!">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -485,37 +488,30 @@
 <p align="center"> 
 <a href="https://xinetzone.github.io" target="_blank" rel="noopener noreferrer"><img width="100" src="https://xinetzone.github.io/favicon.png" alt="Blog logo"></a>
 </p>
+
 <p align="center">
 <a href="https://www.gnu.org/licenses/" target="_blank" rel="noopener"><img src="https://img.shields.io/github/license/xinetzone/xinetzone.github.io.svg" alt="License"></a>
 <a href="http://hits.dwyl.io/xinetzone/xinetzonegithubio" target="_blank" rel="noopener"><img src="http://hits.dwyl.io/xinetzone/xinetzonegithubio.svg" alt="HitCount"></a>
 <a href="https://github.com/xinetzone/xinetzone.github.io/network" target="_blank" rel="noopener"><img src="https://img.shields.io/github/forks/xinetzone/xinetzone.github.io.svg" alt="GitHub forks"></a> <a href="https://github.com/xinetzone/xinetzone.github.io/stargazers" target="_blank" rel="noopener"><img src="https://img.shields.io/github/stars/xinetzone/xinetzone.github.io.svg" alt="GitHub stars"></a>
 </p>
+
 <p>那么该如何生成上面的图标效果呢？首先，我们可以借由 <a href="http://hits.dwyl.io/" target="_blank" rel="noopener">http://hits.dwyl.io/</a> 网站来获取 <code>hits</code> 数：</p>
 <img src="/zh-CN/f7c6a6b8/hits.png" title="hits">
+
 <p>只需要修改</p>
-<pre><code>[![HitCount](http://hits.dwyl.io/xinetzone/xinetzonegithubio.svg)](http://hits.dwyl.io/xinetzone/xinetzonegithubio)
-</code></pre>
-<p>为</p>
+<pre><code>[![HitCount](http://hits.dwyl.io/xinetzone/xinetzonegithubio.svg)](http://hits.dwyl.io/xinetzone/xinetzonegithubio)</code></pre><p>为</p>
 <pre><code>&lt;a href="http://hits.dwyl.io/xinetzone/xinetzonegithubio"&gt;
-&lt;img src="http://hits.dwyl.io/xinetzone/xinetzonegithubio.svg" alt="HitCount"&gt;&lt;/a&gt;
-</code></pre>
-<p><code>licenses</code> 可以这样写：</p>
+&lt;img src="http://hits.dwyl.io/xinetzone/xinetzonegithubio.svg" alt="HitCount"&gt;&lt;/a&gt;</code></pre><p><code>licenses</code> 可以这样写：</p>
 <pre><code>&lt;a href="https://www.gnu.org/licenses/"&gt;
-&lt;img src="https://img.shields.io/github/license/xinetzone/xinetzone.github.io.svg" alt="License"&gt;&lt;/a&gt;
-</code></pre>
-<p>同样 fork 与 star 可以这样写：</p>
+&lt;img src="https://img.shields.io/github/license/xinetzone/xinetzone.github.io.svg" alt="License"&gt;&lt;/a&gt;</code></pre><p>同样 fork 与 star 可以这样写：</p>
 <pre><code>&lt;a href="https://github.com/xinetzone/xinetzone.github.io/network"&gt;
 &lt;img src="https://img.shields.io/github/forks/xinetzone/xinetzone.github.io.svg" alt="GitHub forks"&gt;&lt;/a&gt; 
 &lt;a href="https://github.com/xinetzone/xinetzone.github.io/stargazers"&gt;
-&lt;img src="https://img.shields.io/github/stars/xinetzone/xinetzone.github.io.svg" alt="GitHub stars"&gt;&lt;/a&gt;
-</code></pre>
-<p>通过这里例子，大家应该看出规律了：针对 <code>fork</code>、<code>star</code> 只需要将 <code>xinetzone</code> 替换为个人 github 账户即可。而 <code>licenses</code> 只需要修改 <code>href</code> 为对应的 <code>licenses</code> 类型即可。</p>
+&lt;img src="https://img.shields.io/github/stars/xinetzone/xinetzone.github.io.svg" alt="GitHub stars"&gt;&lt;/a&gt;</code></pre><p>通过这里例子，大家应该看出规律了：针对 <code>fork</code>、<code>star</code> 只需要将 <code>xinetzone</code> 替换为个人 github 账户即可。而 <code>licenses</code> 只需要修改 <code>href</code> 为对应的 <code>licenses</code> 类型即可。</p>
 <p>那最开头的图片如何得到？代码很简单：</p>
 <pre><code>&lt;p align="center"&gt;
 &lt;a href="https://xinetzone.github.io" target="_blank" rel="noopener noreferrer"&gt;&lt;img width="100" src="https://xinetzone.github.io/favicon.png" alt="Blog logo"&gt;&lt;/a&gt;
-&lt;/p&gt;
-</code></pre>
-<p><code>href</code> 替换为 GitHub Pages 创建的博客 host。</p>
+&lt;/p&gt;</code></pre><p><code>href</code> 替换为 GitHub Pages 创建的博客 host。</p>
 <p>最终，完整的代码为：</p>
 <pre><code>&lt;p align="center"&gt;
 &lt;a href="https://xinetzone.github.io" target="_blank" rel="noopener noreferrer"&gt;&lt;img width="100" src="https://xinetzone.github.io/favicon.png" alt="Blog logo"&gt;&lt;/a&gt;
@@ -525,9 +521,7 @@
 &lt;a href="https://www.gnu.org/licenses/"&gt;&lt;img src="https://img.shields.io/github/license/xinetzone/xinetzone.github.io.svg" alt="License"&gt;&lt;/a&gt;
 &lt;a href="http://hits.dwyl.io/xinetzone/xinetzonegithubio"&gt;&lt;img src="http://hits.dwyl.io/xinetzone/xinetzonegithubio.svg" alt="HitCount"&gt;&lt;/a&gt;
 &lt;a href="https://github.com/xinetzone/xinetzone.github.io/network"&gt;&lt;img src="https://img.shields.io/github/forks/xinetzone/xinetzone.github.io.svg" alt="GitHub forks"&gt;&lt;/a&gt; &lt;a href="https://github.com/xinetzone/xinetzone.github.io/stargazers"&gt;&lt;img src="https://img.shields.io/github/stars/xinetzone/xinetzone.github.io.svg" alt="GitHub stars"&gt;&lt;/a&gt;
-&lt;/p&gt;
-</code></pre>
-<script>
+&lt;/p&gt;</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -986,7 +980,7 @@
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">5k</span>&nbsp;字
+                class="white-color">5.3k</span>&nbsp;字
             
             
             
