@@ -23,8 +23,8 @@
           
           
             &lt;p&gt;一般比较正式的开源项目会在 &lt;code&gt;README.md&lt;/code&gt; 的开头添加类似如下图标：&lt;/p&gt;
-&lt;p&gt;&amp;lt;p align=&quot;center&quot;&amp;gt;
-&amp;lt;a href=&quot;https://xinetzone.github.io&quot;
+&lt;p align=&quot;center&quot;&gt; 
+&lt;a href=&quot;https://xinetzone.github.io&quot; target=&quot;_blank&quot;
           
         
       

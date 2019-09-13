@@ -456,14 +456,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.5k
+                        2.6k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        11 分
+                        12 分
                     </div>
                     
                 
@@ -556,7 +556,7 @@ index_generator:
   per_page: 18
   order_by: -date
   
-# Category & Tag
+# Category &amp; Tag
 default_category: uncategorized
 category_map:
 tag_map:
@@ -652,7 +652,7 @@ live2d:  # https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.m
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>更多的配置请 :book: <a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md" target="_blank" rel="noopener">hexo-theme-matery/README_CN.md</a>。为了可以将 hexo 主题部署到 github，需要：</p>
 <pre class="line-numbers language-language-sh"><code class="language-language-sh">$ npm i hexo-deployer-git
-$ hexo clean && hexo g
+$ hexo clean &amp;&amp; hexo g
 $ hexo d
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h2>修改网站的内容与插件</h2>
@@ -684,7 +684,7 @@ description: "你来到了没有知识的荒原 :("
                         404
                     </div>
                     <div class="description center-align">
-                        <%= page.description %>
+                        &lt;%= page.description %&gt;
                     </div>
                 </div>
             </div>
@@ -703,10 +703,10 @@ description: "你来到了没有知识的荒原 :("
     <div class="card-content">
         <div class="card-content article-card-content">
             <div class="title center-align" data-aos="zoom-in-up">
-                <i class="fa fa-address-book"></i>&nbsp;&nbsp;<%- __('myCV') %>
+                <i class="fa fa-address-book"></i>&nbsp;&nbsp;&lt;%- __('myCV') %&gt;
             </div>
             <div id="articleContent" data-aos="fade-up">
-                <%- page.content %>
+                &lt;%- page.content %&gt;
             </div>
         </div>
     </div>
@@ -754,7 +754,7 @@ def watermark(post_name):
     dir_name = 'source/_posts/' + post_name + '/*'
     for files in glob.glob(dir_name):
         im = Image.open(files)
-        if len(im.getbands()) < 3:
+        if len(im.getbands()) &lt; 3:
             im = im.convert('RGB')
             print(files)
         font = ImageFont.truetype('STSONG.TTF', max(30, int(im.size[1] / 20)))
@@ -821,34 +821,34 @@ new_post_name: :lang/:title.md # File name of new posts，支持多语言
 <pre class="line-numbers language-language-js"><code class="language-language-js"><footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            本站由&copy;<a href="https://xinetzone.github.io/" target="_blank">xinetzone</a>基于
+            本站由©<a href="https://xinetzone.github.io/" target="_blank">xinetzone</a>基于
             <a href="https://blinkfox.github.io/" target="_blank">闪烁之狐</a> 的
             <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
         </div>
         <div class="col s12 m8 l8">
-            <% if (theme.wordCount.enable && theme.wordCount.totalCount) { %>
+            &lt;% if (theme.wordCount.enable &amp;&amp; theme.wordCount.totalCount) { %&gt;
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color"><%= totalcount(site) %></span>
-            <% } %>
+                <span class="white-color">&lt;%= totalcount(site) %&gt;</span>
+            &lt;% } %&gt;
             <span id="sitetime"></span>
-            <% let socialClass = '' %>
-			<% if (theme.busuanziStatistics && theme.busuanziStatistics.enable) { %>
-                <% socialClass = 'social-statis' %><br>
-                <% if (theme.busuanziStatistics && theme.busuanziStatistics.totalTraffic) { %>
+            &lt;% let socialClass = '' %&gt;
+			&lt;% if (theme.busuanziStatistics &amp;&amp; theme.busuanziStatistics.enable) { %&gt;
+                &lt;% socialClass = 'social-statis' %&gt;<br>
+                &lt;% if (theme.busuanziStatistics &amp;&amp; theme.busuanziStatistics.totalTraffic) { %&gt;
                 <span id="busuanzi_container_site_pv">
                     <i class="fa fa-heart-o"></i>
                     本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
                 </span>
-                <% } %>
-                <% if (theme.busuanziStatistics && theme.busuanziStatistics.totalNumberOfvisitors) { %>
+                &lt;% } %&gt;
+                &lt;% if (theme.busuanziStatistics &amp;&amp; theme.busuanziStatistics.totalNumberOfvisitors) { %&gt;
                 <span id="busuanzi_container_site_uv">
                     <i class="fa fa-users"></i>
                     次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
                 </span>
-                <% } %>
-            <% } %>
+                &lt;% } %&gt;
+            &lt;% } %&gt;
         </div>
-        <div class="col s12 m4 l4 social-link <%- socialClass %>"><%- partial('_partial/social-link') %></div>
+        <div class="col s12 m4 l4 social-link <%- socialClass %>">&lt;%- partial('_partial/social-link') %&gt;</div>
     </div>
 </footer>
 ...
@@ -856,18 +856,18 @@ new_post_name: :lang/:title.md # File name of new posts，支持多语言
 <p>具体的布局方式，可以参考：<a href="http://www.materializecss.cn/grid.html" target="_blank" rel="noopener">materializecss: 网格</a>。</p>
 <h2>修改社交链接</h2>
 <p>对于 Github 只需要修改其对应文件的 <code>/docs/../thems/layout/_partial/social-link.ejs</code> 为：</p>
-<pre class="line-numbers language-language-js"><code class="language-language-js"><% if (theme.socialLink.github) { %>
+<pre class="line-numbers language-language-js"><code class="language-language-js">&lt;% if (theme.socialLink.github) { %&gt;
     <a href="https://github.com/<%= theme.socialLink.github %>" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fa fa-github"></i>
     </a>
-<% } %>
+&lt;% } %&gt;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>可以添加领英：</p>
-<pre class="line-numbers language-language-js"><code class="language-language-js"><% if (theme.socialLink.Linkedin) { %>
+<pre class="line-numbers language-language-js"><code class="language-language-js">&lt;% if (theme.socialLink.Linkedin) { %&gt;
     <a href="https://www.linkedin.com/in/<%= theme.socialLink.Linkedin %>" class="tooltipped" data-tooltip="领英联系我: <%= theme.socialLink.Linkedin %>" data-position="top" data-delay="50">
         <i class="fa fa-linkedin"></i>
     </a>
-<% } %>
+&lt;% } %&gt;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2>文章头设置</h2>
 <p>首先为了新建文章方便，建议将 <code>/docs/scaffolds/post.md</code> 修改为如下代码：</p>
@@ -1362,7 +1362,7 @@ categories: # 文章分类，本主题的分类表示宏观上大的分类，只
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">5.1k</span>&nbsp;字
+                class="white-color">5k</span>&nbsp;字
             
             
             
