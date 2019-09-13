@@ -5,8 +5,9 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="如何修改 hexo-theme-matery 模板, MXNet Pytorch TensorFlow 刘新伟 计算机视觉 深度学习">
-    <meta name="description" content="修改 /docs/ 目录下的 _config.yml下面介绍如何修改模板主题：https://github.com/blinkfox/hexo-theme-matery.git。
-首先，在个人 github 创建一个 repo，比如：xin">
+    <meta name="description" content="修改 /docs/ 目录下的 _config.yml
+下面介绍如何修改模板主题：https://github.com/blinkfox/hexo-theme-matery.git。
+首先，在个人 github 创建一个 repo，比如：xi">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -455,14 +456,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        3k
+                        2.5k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        14 分
+                        11 分
                     </div>
                     
                 
@@ -478,21 +479,26 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="修改-docs-目录下的-config-yml"><a href="#修改-docs-目录下的-config-yml" class="headerlink" title="修改 /docs/ 目录下的 _config.yml"></a>修改 <code>/docs/</code> 目录下的 <code>_config.yml</code></h2><p>下面介绍如何修改模板主题：<a href="https://github.com/blinkfox/hexo-theme-matery.git" target="_blank" rel="noopener">https://github.com/blinkfox/hexo-theme-matery.git</a>。</p>
+                <h2>修改 <code>/docs/</code> 目录下的 <code>_config.yml</code></h2>
+<p>下面介绍如何修改模板主题：<a href="https://github.com/blinkfox/hexo-theme-matery.git" target="_blank" rel="noopener">https://github.com/blinkfox/hexo-theme-matery.git</a>。</p>
 <p>首先，在个人 github 创建一个 repo，比如：<a href="https://github.com/xinetzone" target="_blank" rel="noopener">xinetzone</a>/<strong><a href="https://github.com/xinetzone/xinetzone.github.io" target="_blank" rel="noopener">xinetzone.github.io</a></strong>，接着克隆到本地。其中 <code>xinetzone</code> 是个人用户名称。为了将设置好的主题上传到 GitHub，需要创建一个分支 <code>hexo</code>：</p>
-<pre class="line-numbers language-sh"><code class="language-sh">$ cd xinetzone.github.io
+<pre class="line-numbers language-language-sh"><code class="language-language-sh">$ cd xinetzone.github.io
 $ git checkout -b hexo
 $ mkdir docs
 $ cd docs
-$ hexo init --no-install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+$ hexo init --no-install
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>其中 <code>--no-install</code> 表示使用 hexo 进行初始化并跳过 <code>npm install</code>。下面需要切换主题，通过 <code>git submodule</code> 添加 hexo-theme-matery 主题：</p>
-<pre class="line-numbers language-sh"><code class="language-sh">$ git submodule add https://github.com/blinkfox/hexo-theme-matery.git themes/hexo-theme-matery<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>如果报报”error: RPC failed; curl 56 OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 10054”解决方法：</p>
-<pre class="line-numbers language-sh"><code class="language-sh">$ git config http.sslVerify "false"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>如果再报 “git config http.sslVerify “false”  fatal: not in a git directory”，请执行： </p>
-<pre class="line-numbers language-sh"><code class="language-sh">$ git config  --globle   http.sslVerify "false"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-language-sh"><code class="language-language-sh">$ git submodule add https://github.com/blinkfox/hexo-theme-matery.git themes/hexo-theme-matery
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果报报"error: RPC failed; curl 56 OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 10054"解决方法：</p>
+<pre class="line-numbers language-language-sh"><code class="language-language-sh">$ git config http.sslVerify "false"
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果再报 "git config http.sslVerify "false"  fatal: not in a git directory"，请执行：</p>
+<pre class="line-numbers language-language-sh"><code class="language-language-sh">$ git config  --globle   http.sslVerify "false"
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>修改 <code>/docs/</code> 目录下的 <code>_config.yml</code>，下面依照 <a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md" target="_blank" rel="noopener">hexo-theme-matery/README_CN.md</a> 给出我自己的修改：</p>
-<pre class="line-numbers language-yml"><code class="language-yml"># Hexo Configuration
+<pre class="line-numbers language-language-yml"><code class="language-language-yml"># Hexo Configuration
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
@@ -540,7 +546,7 @@ highlight: # 默认的不好看，需要禁用
   line_number: false
   auto_detect: false
   tab_replace:
-
+  
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
@@ -549,7 +555,7 @@ index_generator:
   path: ''
   per_page: 18
   order_by: -date
-
+  
 # Category & Tag
 default_category: uncategorized
 category_map:
@@ -636,70 +642,83 @@ live2d:  # https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.m
     show: true # 默认 false
     scale: 0.5 # 移动设备上的缩放  
   react:
-    opacity: 0.7<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    opacity: 0.7
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>接着，使用 <code>npm install</code> 安装必备包：</p>
-<pre class="line-numbers language-sh"><code class="language-sh">$ npm install<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-language-sh"><code class="language-language-sh">$ npm install
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>关于 <code>fsevents</code> 的警告不要管，在 Windows 系统中总会有。但需要升级 <code>core-js@3</code>（即 Hexo 3）：</p>
-<pre class="line-numbers language-sh"><code class="language-sh">$ npm install core-js@3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-language-sh"><code class="language-language-sh">$ npm install core-js@3
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>更多的配置请 :book: <a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md" target="_blank" rel="noopener">hexo-theme-matery/README_CN.md</a>。为了可以将 hexo 主题部署到 github，需要：</p>
-<pre class="line-numbers language-sh"><code class="language-sh">$ npm i hexo-deployer-git
+<pre class="line-numbers language-language-sh"><code class="language-language-sh">$ npm i hexo-deployer-git
 $ hexo clean && hexo g
-$ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="修改网站的内容与插件"><a href="#修改网站的内容与插件" class="headerlink" title="修改网站的内容与插件"></a>修改网站的内容与插件</h2><p>以下内容参考：<a href="https://godweiyang.com/2018/04/13/hexo-blog/" target="_blank" rel="noopener">https://godweiyang.com/2018/04/13/hexo-blog/</a></p>
-<h3 id="添加-404-页面"><a href="#添加-404-页面" class="headerlink" title="添加 404 页面"></a>添加 404 页面</h3><p>首先在 <code>/docs/source/</code> 目录下新建一个 <code>404.md</code>，内容如下：</p>
+$ hexo d
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2>修改网站的内容与插件</h2>
+<p>以下内容参考：<a href="https://godweiyang.com/2018/04/13/hexo-blog/" target="_blank" rel="noopener">https://godweiyang.com/2018/04/13/hexo-blog/</a></p>
+<h3>添加 404 页面</h3>
+<p>首先在 <code>/docs/source/</code> 目录下新建一个 <code>404.md</code>，内容如下：</p>
 <pre><code>---
 title: 404
 date: 2019-09-02 13:13:10
 type: "404"
 layout: "404"
 description: "你来到了没有知识的荒原 :("
----</code></pre><p>然后在 <code>/docs/themes/matery/layout/</code> 目录下新建一个 <code>404.ejs</code> 文件，内容如下：</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token operator">&lt;</span>style type<span class="token operator">=</span><span class="token string">"text/css"</span><span class="token operator">></span>
-    <span class="token comment" spellcheck="true">/* don't remove. */</span>
-    <span class="token punctuation">.</span>about<span class="token operator">-</span>cover <span class="token punctuation">{</span>
-        height<span class="token punctuation">:</span> 75vh<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">></span>
+---
+</code></pre>
+<p>然后在 <code>/docs/themes/matery/layout/</code> 目录下新建一个 <code>404.ejs</code> 文件，内容如下：</p>
+<pre class="line-numbers language-language-js"><code class="language-language-js"><style type="text/css">
+    /* don't remove. */
+    .about-cover {
+        height: 75vh;
+    }
+</style>
 
-<span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"bg-cover pd-header about-cover"</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"container"</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"row"</span><span class="token operator">></span>
-            <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"col s10 offset-s1 m8 offset-m2 l8 offset-l2"</span><span class="token operator">></span>
-                <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"brand"</span><span class="token operator">></span>
-                    <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"title center-align"</span><span class="token operator">></span>
-                        <span class="token number">404</span>
-                    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-                    <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"description center-align"</span><span class="token operator">></span>
-                        <span class="token operator">&lt;</span><span class="token operator">%</span><span class="token operator">=</span> page<span class="token punctuation">.</span>description <span class="token operator">%</span><span class="token operator">></span>
-                    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-                <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-            <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<div class="bg-cover pd-header about-cover">
+    <div class="container">
+        <div class="row">
+            <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+                <div class="brand">
+                    <div class="title center-align">
+                        404
+                    </div>
+                    <div class="description center-align">
+                        <%= page.description %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<span class="token operator">&lt;</span>script<span class="token operator">></span>
-    <span class="token comment" spellcheck="true">// 每天切换 banner 图.  Switch banner image every day.</span>
-    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.bg-cover'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">'background-image'</span><span class="token punctuation">,</span> <span class="token string">'url(/medias/banner/'</span> <span class="token operator">+</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDay</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'.jpg)'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="“关于”页面增加简历（可选）"><a href="#“关于”页面增加简历（可选）" class="headerlink" title="“关于”页面增加简历（可选）"></a>“关于”页面增加简历（可选）</h3><p>修改 <code>/docs/themes/matery/layout/about.ejs</code>，找到 <code>&lt;div class="card"&gt;</code> 标签，然后找到它对应的 <code>&lt;/div&gt;</code> 标签，接在后面新增一个 card，语句如下：</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"card"</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"card-content"</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"card-content article-card-content"</span><span class="token operator">></span>
-            <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"title center-align"</span> data<span class="token operator">-</span>aos<span class="token operator">=</span><span class="token string">"zoom-in-up"</span><span class="token operator">></span>
-                <span class="token operator">&lt;</span>i <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"fa fa-address-book"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">></span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&lt;</span><span class="token operator">%</span><span class="token operator">-</span> <span class="token function">__</span><span class="token punctuation">(</span><span class="token string">'myCV'</span><span class="token punctuation">)</span> <span class="token operator">%</span><span class="token operator">></span>
-            <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-            <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"articleContent"</span> data<span class="token operator">-</span>aos<span class="token operator">=</span><span class="token string">"fade-up"</span><span class="token operator">></span>
-                <span class="token operator">&lt;</span><span class="token operator">%</span><span class="token operator">-</span> page<span class="token punctuation">.</span>content <span class="token operator">%</span><span class="token operator">></span>
-            <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<script>
+    // 每天切换 banner 图.  Switch banner image every day.
+    $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+</script>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3>“关于”页面增加简历（可选）</h3>
+<p>修改 <code>/docs/themes/matery/layout/about.ejs</code>，找到 <code>&lt;div class="card"&gt;</code> 标签，然后找到它对应的 <code>&lt;/div&gt;</code> 标签，接在后面新增一个 card，语句如下：</p>
+<pre class="line-numbers language-language-js"><code class="language-language-js"><div class="card">
+    <div class="card-content">
+        <div class="card-content article-card-content">
+            <div class="title center-align" data-aos="zoom-in-up">
+                <i class="fa fa-address-book"></i>&nbsp;&nbsp;<%- __('myCV') %>
+            </div>
+            <div id="articleContent" data-aos="fade-up">
+                <%- page.content %>
+            </div>
+        </div>
+    </div>
+</div>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这样就会多出一张 card，然后可以在 <code>/docs/source/about/index.md</code> 下面写上你的简历了，当然这里的位置随你自己设置，你也可以把简历作为第一个 card。</p>
-<h3 id="添加动漫人物"><a href="#添加动漫人物" class="headerlink" title="添加动漫人物"></a>添加动漫人物</h3><pre class="line-numbers language-sh"><code class="language-sh">$ npm install --save hexo-helper-live2d
-$ npm install live2d-widget-model-shizuku<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3>添加动漫人物</h3>
+<pre class="line-numbers language-language-sh"><code class="language-language-sh">$ npm install --save hexo-helper-live2d
+$ npm install live2d-widget-model-shizuku
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>在 <code>/docs/_config.yml</code> 最后添加：</p>
-<pre class="line-numbers language-yml"><code class="language-yml">live2d:
+<pre class="line-numbers language-language-yml"><code class="language-language-yml">live2d:
   enable: true # 默认为 false
   scriptFrom: local
   pluginRootPath: live2dw/
@@ -716,10 +735,12 @@ $ npm install live2d-widget-model-shizuku<span aria-hidden="true" class="line-nu
   mobile:
     show: true # 默认 false
   react:
-    opacity: 0.7<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="图片添加水印"><a href="#图片添加水印" class="headerlink" title="图片添加水印"></a>图片添加水印</h3><p>为了防止别人抄袭你文章，可以把所有的图片都加上水印，方法很简单。</p>
+    opacity: 0.7
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3>图片添加水印</h3>
+<p>为了防止别人抄袭你文章，可以把所有的图片都加上水印，方法很简单。</p>
 <p>首先新建一个 <code>/docs/watermark.py</code>，代码如下：</p>
-<pre class="line-numbers language-py"><code class="language-py"># -*- coding: utf-8 -*-
+<pre class="line-numbers language-language-py"><code class="language-language-py"># -*- coding: utf-8 -*-
 import sys
 import glob
 from PIL import Image
@@ -747,94 +768,109 @@ if __name__ == '__main__':
     if len(sys.argv) == 2:
         watermark(sys.argv[1])
     else:
-        print('[usage] <input>')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>字体也放根目录下，自己找字体。然后每次写完一篇文章可以运行 <code>python3 watermark.py  postname</code> 添加水印，如果第一次运行要给所有文章添加水印，可以运行 <code>python3 watermark.py all</code>。</p>
-<pre class="line-numbers language-sh"><code class="language-sh">$ npm install hexo --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="修复代码块行号不显示的-bug"><a href="#修复代码块行号不显示的-bug" class="headerlink" title="修复代码块行号不显示的 bug"></a>修复代码块行号不显示的 bug</h3><p>修改 <code>/docs/themes/matery/source/css/matery.css</code> 第 95 行左右的 <code>pre</code> 和 <code>code</code> 两段改为如下代码：</p>
-<pre class="line-numbers language-css"><code class="language-css"><span class="token selector">pre </span><span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">/* padding: 3.3rem !important; */</span>
-    <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">1.5</span>rem <span class="token number">1.5</span>rem <span class="token number">1.5</span>rem <span class="token number">3.3</span>rem <span class="token important">!important</span><span class="token punctuation">;</span>
-    <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">1</span>rem <span class="token number">0</span> <span class="token important">!important</span><span class="token punctuation">;</span>
-    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token hexcode">#272822</span><span class="token punctuation">;</span>
-    <span class="token property">overflow</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
-    <span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">0.35</span>rem<span class="token punctuation">;</span>
-    <span class="token property">tab-size</span><span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+        print('[usage] <input>')
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>字体也放根目录下，自己找字体。然后每次写完一篇文章可以运行 <code>python3 watermark.py postname</code> 添加水印，如果第一次运行要给所有文章添加水印，可以运行 <code>python3 watermark.py all</code>。</p>
+<pre class="line-numbers language-language-sh"><code class="language-language-sh">$ npm install hexo --save
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3>修复代码块行号不显示的 bug</h3>
+<p>修改 <code>/docs/themes/matery/source/css/matery.css</code> 第 95 行左右的 <code>pre</code> 和 <code>code</code> 两段改为如下代码：</p>
+<pre class="line-numbers language-language-css"><code class="language-language-css">pre {
+    /* padding: 3.3rem !important; */
+    padding: 1.5rem 1.5rem 1.5rem 3.3rem !important;
+    margin: 1rem 0 !important;
+    background: #272822;
+    overflow: auto;
+    border-radius: 0.35rem;
+    tab-size: 4;
+}
 
-<span class="token selector">code </span><span class="token punctuation">{</span>
-    <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">1</span>px <span class="token number">5</span>px<span class="token punctuation">;</span>
-    <span class="token property">font-family</span><span class="token punctuation">:</span> Inconsolata, Monaco, Consolas, <span class="token string">'Courier New'</span>, Courier, monospace<span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">/* font-size: 0.91rem; */</span>
-    <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#e96900</span><span class="token punctuation">;</span>
-    <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token hexcode">#f8f8f8</span><span class="token punctuation">;</span>
-    <span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">2</span>px<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+code {
+    padding: 1px 5px;
+    font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
+    /* font-size: 0.91rem; */
+    color: #e96900;
+    background-color: #f8f8f8;
+    border-radius: 2px;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>即 注释掉 <code>code</code> 的 <code>font-size: 0.91rem</code>，修改 <code>pre</code> 的 <code>padding</code>。然后在 <code>/docs/_config.yml</code> 中设置 <code>prism_plugin.line_number</code> 为 <code>true</code>。</p>
-<h2 id="上传主题到-GitHub"><a href="#上传主题到-GitHub" class="headerlink" title="上传主题到 GitHub"></a>上传主题到 GitHub</h2><p>上面的一系列操作已经配置了一个可以使用的网站了，为了更加便利的使用主题，我们需要将其备份到 GitHub：</p>
-<pre class="line-numbers language-sh"><code class="language-sh">$ cd .. # 切换回主项目的根目录
+<h2>上传主题到 GitHub</h2>
+<p>上面的一系列操作已经配置了一个可以使用的网站了，为了更加便利的使用主题，我们需要将其备份到 GitHub：</p>
+<pre class="line-numbers language-language-sh"><code class="language-language-sh">$ cd .. # 切换回主项目的根目录
 $ git add .
 $ git commit -m "创建一个hexo demo"
-$ git push origin hexo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+$ git push origin hexo
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>最后还需要将 origin/hexo 设置为 Github 默认仓库。</p>
 <p>最终的效果展示可以 :book: <a href="https://xinetzone.github.io">https://xinetzone.github.io</a>。</p>
-<h2 id="部署到-GitHub-时图片显示问题"><a href="#部署到-GitHub-时图片显示问题" class="headerlink" title="部署到 GitHub 时图片显示问题"></a>部署到 GitHub 时图片显示问题</h2><p>一般情况，hexo3 对于图片的显示可能会出现问题，解决方法是卸载 <code>hexo-render-marked-lazy</code>。如果还有问题，那么可能是链接出现问题，解决策略是将默认是链接方式改为永久性链接，:book: <a href="https://hexo.io/zh-cn/docs/permalinks.html" target="_blank" rel="noopener">永久链接（Permalinks）</a> 以及 <a href="https://post.zz173.com/detail/hexo-abbrlink-2.0.4.html" target="_blank" rel="noopener">abbrlink更新2.0.4说明</a>。<code>/docs/_config.yml</code> 要做两处修改：</p>
-<pre class="line-numbers language-yml"><code class="language-yml">permalink: :lang/:abbrlink.html # :lang/:title/（多语言） 或者 :year/:month/:day/:title/
+<h2>部署到 GitHub 时图片显示问题</h2>
+<p>一般情况，hexo3 对于图片的显示可能会出现问题，解决方法是卸载 <code>hexo-render-marked-lazy</code>。如果还有问题，那么可能是链接出现问题，解决策略是将默认是链接方式改为永久性链接，:book: <a href="https://hexo.io/zh-cn/docs/permalinks.html" target="_blank" rel="noopener">永久链接（Permalinks）</a> 以及 <a href="https://post.zz173.com/detail/hexo-abbrlink-2.0.4.html" target="_blank" rel="noopener">abbrlink更新2.0.4说明</a>。<code>/docs/_config.yml</code> 要做两处修改：</p>
+<pre class="line-numbers language-language-yml"><code class="language-language-yml">permalink: :lang/:abbrlink.html # :lang/:title/（多语言） 或者 :year/:month/:day/:title/
 abbrlink:
   alg: crc32  # 算法：crc16(default) and crc32
   rep: hex    # 进制：dec(default) and hex
-permalink_defaults:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+permalink_defaults:
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>与</p>
-<pre class="line-numbers language-yml"><code class="language-yml"># Writing
-new_post_name: :lang/:title.md # File name of new posts，支持多语言<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="修改首页页脚显示"><a href="#修改首页页脚显示" class="headerlink" title="修改首页页脚显示"></a>修改首页页脚显示</h2><p>下面是我修改的部分代码：</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token operator">&lt;</span>footer <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"page-footer bg-color"</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"container row center-align"</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"col s12 m8 l8 copy-right"</span><span class="token operator">></span>
-            本站由<span class="token operator">&amp;</span>copy<span class="token punctuation">;</span><span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"https://xinetzone.github.io/"</span> target<span class="token operator">=</span><span class="token string">"_blank"</span><span class="token operator">></span>xinetzone<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>基于
-            <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"https://blinkfox.github.io/"</span> target<span class="token operator">=</span><span class="token string">"_blank"</span><span class="token operator">></span>闪烁之狐<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span> 的
-            <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"https://github.com/blinkfox/hexo-theme-matery"</span> target<span class="token operator">=</span><span class="token string">"_blank"</span><span class="token operator">></span>hexo<span class="token operator">-</span>theme<span class="token operator">-</span>matery<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>主题搭建<span class="token punctuation">.</span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"col s12 m8 l8"</span><span class="token operator">></span>
-            <span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>theme<span class="token punctuation">.</span>wordCount<span class="token punctuation">.</span>enable <span class="token operator">&amp;&amp;</span> theme<span class="token punctuation">.</span>wordCount<span class="token punctuation">.</span>totalCount<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">%</span><span class="token operator">></span>
-                <span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span><span class="token operator">&lt;</span>i <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"fa fa-area-chart"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">></span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span>站点总字数<span class="token punctuation">:</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span>
-                <span class="token operator">&lt;</span>span <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"white-color"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">%</span><span class="token operator">=</span> <span class="token function">totalcount</span><span class="token punctuation">(</span>site<span class="token punctuation">)</span> <span class="token operator">%</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
-            <span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token punctuation">}</span> <span class="token operator">%</span><span class="token operator">></span>
-            <span class="token operator">&lt;</span>span id<span class="token operator">=</span><span class="token string">"sitetime"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
-            <span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token keyword">let</span> socialClass <span class="token operator">=</span> <span class="token string">''</span> <span class="token operator">%</span><span class="token operator">></span>
-            <span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>theme<span class="token punctuation">.</span>busuanziStatistics <span class="token operator">&amp;&amp;</span> theme<span class="token punctuation">.</span>busuanziStatistics<span class="token punctuation">.</span>enable<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">%</span><span class="token operator">></span>
-                <span class="token operator">&lt;</span><span class="token operator">%</span> socialClass <span class="token operator">=</span> <span class="token string">'social-statis'</span> <span class="token operator">%</span><span class="token operator">></span><span class="token operator">&lt;</span>br<span class="token operator">></span>
-                <span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>theme<span class="token punctuation">.</span>busuanziStatistics <span class="token operator">&amp;&amp;</span> theme<span class="token punctuation">.</span>busuanziStatistics<span class="token punctuation">.</span>totalTraffic<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">%</span><span class="token operator">></span>
-                <span class="token operator">&lt;</span>span id<span class="token operator">=</span><span class="token string">"busuanzi_container_site_pv"</span><span class="token operator">></span>
-                    <span class="token operator">&lt;</span>i <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"fa fa-heart-o"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">></span>
-                    本站总访问量 <span class="token operator">&lt;</span>span id<span class="token operator">=</span><span class="token string">"busuanzi_value_site_pv"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"white-color"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
-                <span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
-                <span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token punctuation">}</span> <span class="token operator">%</span><span class="token operator">></span>
-                <span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>theme<span class="token punctuation">.</span>busuanziStatistics <span class="token operator">&amp;&amp;</span> theme<span class="token punctuation">.</span>busuanziStatistics<span class="token punctuation">.</span>totalNumberOfvisitors<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">%</span><span class="token operator">></span>
-                <span class="token operator">&lt;</span>span id<span class="token operator">=</span><span class="token string">"busuanzi_container_site_uv"</span><span class="token operator">></span>
-                    <span class="token operator">&lt;</span>i <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"fa fa-users"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">></span>
-                    次<span class="token punctuation">,</span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span>访客数 <span class="token operator">&lt;</span>span id<span class="token operator">=</span><span class="token string">"busuanzi_value_site_uv"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"white-color"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span> 人<span class="token punctuation">.</span>
-                <span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
-                <span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token punctuation">}</span> <span class="token operator">%</span><span class="token operator">></span>
-            <span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token punctuation">}</span> <span class="token operator">%</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"col s12 m4 l4 social-link &lt;%- socialClass %>"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">%</span><span class="token operator">-</span> <span class="token function">partial</span><span class="token punctuation">(</span><span class="token string">'_partial/social-link'</span><span class="token punctuation">)</span> <span class="token operator">%</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>footer<span class="token operator">></span>
-<span class="token operator">...</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-language-yml"><code class="language-language-yml"># Writing
+new_post_name: :lang/:title.md # File name of new posts，支持多语言
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2>修改首页页脚显示</h2>
+<p>下面是我修改的部分代码：</p>
+<pre class="line-numbers language-language-js"><code class="language-language-js"><footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://xinetzone.github.io/" target="_blank">xinetzone</a>基于
+            <a href="https://blinkfox.github.io/" target="_blank">闪烁之狐</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+        </div>
+        <div class="col s12 m8 l8">
+            <% if (theme.wordCount.enable && theme.wordCount.totalCount) { %>
+                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+                <span class="white-color"><%= totalcount(site) %></span>
+            <% } %>
+            <span id="sitetime"></span>
+            <% let socialClass = '' %>
+			<% if (theme.busuanziStatistics && theme.busuanziStatistics.enable) { %>
+                <% socialClass = 'social-statis' %><br>
+                <% if (theme.busuanziStatistics && theme.busuanziStatistics.totalTraffic) { %>
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                <% } %>
+                <% if (theme.busuanziStatistics && theme.busuanziStatistics.totalNumberOfvisitors) { %>
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                <% } %>
+            <% } %>
+        </div>
+        <div class="col s12 m4 l4 social-link <%- socialClass %>"><%- partial('_partial/social-link') %></div>
+    </div>
+</footer>
+...
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>具体的布局方式，可以参考：<a href="http://www.materializecss.cn/grid.html" target="_blank" rel="noopener">materializecss: 网格</a>。</p>
-<h2 id="修改社交链接"><a href="#修改社交链接" class="headerlink" title="修改社交链接"></a>修改社交链接</h2><p>对于 Github 只需要修改其对应文件的 <code>/docs/../thems/layout/_partial/social-link.ejs</code> 为：</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>theme<span class="token punctuation">.</span>socialLink<span class="token punctuation">.</span>github<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">%</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"https://github.com/&lt;%= theme.socialLink.github %>"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"tooltipped"</span> target<span class="token operator">=</span><span class="token string">"_blank"</span> data<span class="token operator">-</span>tooltip<span class="token operator">=</span><span class="token string">"访问我的GitHub"</span> data<span class="token operator">-</span>position<span class="token operator">=</span><span class="token string">"top"</span> data<span class="token operator">-</span>delay<span class="token operator">=</span><span class="token string">"50"</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>i <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"fa fa-github"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token punctuation">}</span> <span class="token operator">%</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2>修改社交链接</h2>
+<p>对于 Github 只需要修改其对应文件的 <code>/docs/../thems/layout/_partial/social-link.ejs</code> 为：</p>
+<pre class="line-numbers language-language-js"><code class="language-language-js"><% if (theme.socialLink.github) { %>
+    <a href="https://github.com/<%= theme.socialLink.github %>" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+<% } %>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>可以添加领英：</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>theme<span class="token punctuation">.</span>socialLink<span class="token punctuation">.</span>Linkedin<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">%</span><span class="token operator">></span>
-    <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"https://www.linkedin.com/in/&lt;%= theme.socialLink.Linkedin %>"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"tooltipped"</span> data<span class="token operator">-</span>tooltip<span class="token operator">=</span><span class="token string">"领英联系我: &lt;%= theme.socialLink.Linkedin %>"</span> data<span class="token operator">-</span>position<span class="token operator">=</span><span class="token string">"top"</span> data<span class="token operator">-</span>delay<span class="token operator">=</span><span class="token string">"50"</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>i <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"fa fa-linkedin"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token punctuation">}</span> <span class="token operator">%</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="文章头设置"><a href="#文章头设置" class="headerlink" title="文章头设置"></a>文章头设置</h2><p>首先为了新建文章方便，建议将 <code>/docs/scaffolds/post.md</code> 修改为如下代码：</p>
+<pre class="line-numbers language-language-js"><code class="language-language-js"><% if (theme.socialLink.Linkedin) { %>
+    <a href="https://www.linkedin.com/in/<%= theme.socialLink.Linkedin %>" class="tooltipped" data-tooltip="领英联系我: <%= theme.socialLink.Linkedin %>" data-position="top" data-delay="50">
+        <i class="fa fa-linkedin"></i>
+    </a>
+<% } %>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2>文章头设置</h2>
+<p>首先为了新建文章方便，建议将 <code>/docs/scaffolds/post.md</code> 修改为如下代码：</p>
 <pre><code>---
 title: {{ title }}
 date: {{ date }}
@@ -853,16 +889,22 @@ categories: # 文章分类，本主题的分类表示宏观上大的分类，只
 版权声明：
 
 除非注明，本博文章均为原创，转载请以链接形式标明本文地址。
----</code></pre><p>这样新建文章后不用你自己补充了，修改信息就行。</p>
-<h2 id="部署的项目主页添加-README"><a href="#部署的项目主页添加-README" class="headerlink" title="部署的项目主页添加 README"></a>部署的项目主页添加 <code>README</code></h2><p>在部署的项目到 Github 上建立自己的博客仓库的时候并没有生成 README 文件，为此，我们需要在 <code>/docs/source</code>下手动新建 <code>README.md</code>。然后再在这个新建文件中写 <code>README</code> 即可。再之后 <code>hexo g</code> 会把它复制到 <code>/docs/public</code> 文件夹，而不会被解析成 html 文件，发布在博客中。</p>
-<h2 id="创建新的页面"><a href="#创建新的页面" class="headerlink" title="创建新的页面"></a>创建新的页面</h2><p>首先运行如下命令，生成 :book: 页面：</p>
-<pre class="line-numbers language-sh"><code class="language-sh">$ hexo new page board<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+---
+</code></pre>
+<p>这样新建文章后不用你自己补充了，修改信息就行。</p>
+<h2>部署的项目主页添加 <code>README</code></h2>
+<p>在部署的项目到 Github 上建立自己的博客仓库的时候并没有生成 README 文件，为此，我们需要在 <code>/docs/source</code>下手动新建 <code>README.md</code>。然后再在这个新建文件中写 <code>README</code> 即可。再之后 <code>hexo g</code> 会把它复制到 <code>/docs/public</code> 文件夹，而不会被解析成 html 文件，发布在博客中。</p>
+<h2>创建新的页面</h2>
+<p>首先运行如下命令，生成 :book: 页面：</p>
+<pre class="line-numbers language-language-sh"><code class="language-language-sh">$ hexo new page board
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>系统会自动给你在 <code>/docs/source</code> 文件夹下创建一个 <code>book</code> 文件夹，以及 <code>book</code> 文件夹中的 <code>index.md</code>，这样你访问的 <code>book</code> 对应的链接就是 <code>http://xxx.xxx/book</code>。</p>
 <p>然后在主题配置文件的 <code>menu</code> 菜单栏添加一个 <code>Yourdiy : /yourdiy</code>，注意冒号后面要有空格，以及前面的空格要和 <code>menu</code> 中默认的保持整齐。然后在 <code>languages</code> 文件夹中，找到 <code>zh-CN.yml</code>，在 <code>index</code> 中添加 <code>yourdiy: '中文意思'</code> 就可以显示中文了。</p>
 <p>比如在 <code>zh-CN.yml</code> 中添加：<code>book: 书籍</code>，在 <code>menu</code> 菜单栏中添加：</p>
-<pre class="line-numbers language-yml"><code class="language-yml">书籍:
+<pre class="line-numbers language-language-yml"><code class="language-language-yml">书籍:
     url: /book
-    icon: fa-book<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+    icon: fa-book
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1320,7 +1362,7 @@ categories: # 文章分类，本主题的分类表示宏观上大的分类，只
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">5.3k</span>&nbsp;字
+                class="white-color">5.1k</span>&nbsp;字
             
             
             
