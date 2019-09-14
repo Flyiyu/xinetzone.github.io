@@ -316,10 +316,19 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 
                 
                 
+                <a href="/categories/开源项目/" title="开源项目: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            style="background-color: #F9EBEA;">开源项目
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/categories/hexo/" title="hexo: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9EBEA;">hexo
+                            style="background-color: #F5EEF8;">hexo
                         <span class="tag-length">2</span>
                     </span>
                 </a>
@@ -328,16 +337,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 <a href="/categories/教程/" title="教程: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">教程
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/开源项目/" title="开源项目: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            style="background-color: #D5F5E3;">开源项目
+                            style="background-color: #D5F5E3;">教程
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -460,6 +460,14 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 setInterval("createtime()", 250);
             </script>
             
+            
+            
+                <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+                <script>
+                  if (window.mermaid) {
+                    mermaid.initialize({theme: 'forest'});
+                  }
+                </script>
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
