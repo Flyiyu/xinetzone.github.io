@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>计算机视觉入门必备工具</title>
+      <link href="/zh-CN/ad2d8036.html"/>
+      <url>/zh-CN/ad2d8036.html</url>
+      
+        <content type="html"><![CDATA[<p>随着 GPU 和大量优质数据的出现，深度学习技术在计算机视觉任务中扮演着越来越重要的角色。深度学习技术的端到端的模式大大简化了特征工程的工作量，为提取更加有效的特征提供了一个泛化性更强的工具。故而，学习深度学习技术是计算机视觉任务的不二之选。</p><p>一般地，学习深度学习技术需要具备以下能力：</p><ul><li>编程语言：当前，大多数深度学习框架均以 Python 为主流编程语言。您可以阅读 Python 官方教程：<a href="https://docs.python.org/zh-cn/3/" target="_blank" rel="noopener">中文 Python</a>。</li><li>版本控制：一个深度学习项目不是一天建成，需要不断的调试和修复，因而学习<strong>版本控制</strong>是十分重要的任务。本文仅仅介绍 Git。</li><li>解读和使用优质的 GitHub 资源：如果所有的项目都从零开始构建是完全没有必要的，将项目建立在优秀的 GitHub 项目的基础上，继续开发，将会为您节省大量的时间和经历。本文将详细介绍如何使用 GitHub 资源。</li></ul><h2 id="1-Git-基础"><a href="#1-Git-基础" class="headerlink" title="1 Git 基础"></a>1 Git 基础</h2><p><img src="http://justinhileman.info/article/git-pretty/git-pretty.png" alt="git 速查表"></p><p>Git 学习资源：</p><ul><li><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener">Git 基础：Pro Git</a></li><li><a href="https://git-scm.com/doc/ext" target="_blank" rel="noopener">Git 进阶</a></li><li>PDF 版命令手册：<a href="https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf" target="_blank" rel="noopener">github-git-cheat-sheet.pdf</a></li><li>Git 完整命令手册地址：<a href="http://git-scm.com/docs" target="_blank" rel="noopener">http://git-scm.com/docs</a></li></ul><p>Git 是<strong>分布式的</strong>，把内容按元数据方式存储（），</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+            <tag> github </tag>
+            
+            <tag> git submodule </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>github 编写 README 时如何获取 fork 等图标</title>
       <link href="/zh-CN/f7c6a6b8.html"/>
       <url>/zh-CN/f7c6a6b8.html</url>
