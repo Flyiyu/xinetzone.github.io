@@ -43,6 +43,7 @@ render_drafts: false
 # post_asset_folder 为 true参数后，在建立文件时，Hexo
 ## 会自动建立一个与文章同名的文件夹，您可以把与该文章相关的所有资源都放到那个文件夹，
 ## 如此一来，您便可以更方便的使用资源。
+## npm install hexo-asset-image --save
 post_asset_folder: true
 relative_link: false
 future: true
@@ -153,3 +154,10 @@ live2d:  # https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.m
     scale: 0.5 # 移动设备上的缩放  
   react:
     opacity: 0.7
+
+# mermaid chart
+mermaid: ## mermaid url https://github.com/knsv/mermaid
+  enable: true  # default true
+  version: "7.1.2" # default v7.1.2
+  options:  # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js
+    #startOnload: true  // default true
