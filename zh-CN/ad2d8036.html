@@ -436,7 +436,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.4k
+                        1.6k
                     </div>
                     
 
@@ -510,6 +510,14 @@ $ git config --global user.email 邮箱<span aria-hidden="true" class="line-numb
 <li>以（<code>/</code>）结尾指定目录。</li>
 <li>惊叹号（<code>!</code>）取反要忽略指定模式以外的文件或目录。</li>
 </ul>
+<p>当您通过 <code>git status</code> 查看文件的状态为均已经暂存时，您便可以使用 <code>git commit -m "提交的信息"</code> 命令将文件的变动提交到仓库了。提交时记录的是放在暂存区域的快照，并以 SHA-1 校验码进行标识方便之后的版本转换。</p>
+<pre class="line-numbers language-mermaid"><code class="language-mermaid">graph TD
+A(History) --git reset -- files--> B(Staged)
+B --git checkout -- files--> C(Working Directory)
+B --git commit -m --> A
+C --git add files--> B
+A --git commit -a -m --> C
+C --git checkout HEAD -- files--> A<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -969,7 +977,7 @@ $ git config --global user.email 邮箱<span aria-hidden="true" class="line-numb
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">6.8k</span>&nbsp;字
+                class="white-color">6.9k</span>&nbsp;字
             
             
             
