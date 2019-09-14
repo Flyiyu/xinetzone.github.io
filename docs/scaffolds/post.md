@@ -1,7 +1,7 @@
 ---
 title: {{ title }}
 date: {{ date }}
-updated: {{ date }}
+updated: {{ updated }}
 top: false # 推荐文章（文章是否置顶）
 cover: false # 表示该文章是否需要加入到首页轮播封面中
 password:
