@@ -436,14 +436,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.2k
+                        1.4k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        4 分
+                        5 分
                     </div>
                     
                 
@@ -491,12 +491,25 @@ $ git config --global user.email 邮箱<span aria-hidden="true" class="line-numb
 <p>配置好了用户信息，之后您便可以使用 Git 了。如果您不知道某一个命令如何使用，您可以使用 <code>git help</code> 来获取帮助，比如：</p>
 <pre class="line-numbers language-sh"><code class="language-sh">$ git help config<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>您便轻松的获取 <code>git config</code> 的离线帮助文档。</p>
-<h3 id="1-2-创建一个本地仓库"><a href="#1-2-创建一个本地仓库" class="headerlink" title="1.2 创建一个本地仓库"></a>1.2 创建一个本地仓库</h3><p>创建一个本地仓库，只需要您在工作目录下使用命令 <code>git init</code> 即可。此命令会在工作目录的根目录下创建 <code>.git</code> 目录，即本地的 Git 仓库。但是，此时，您的 Git 本地仓库是空的，我们需要将工作目录中的文件加入 Git 的跟踪：</p>
+<h3 id="1-2-创建并操作一个本地仓库"><a href="#1-2-创建并操作一个本地仓库" class="headerlink" title="1.2 创建并操作一个本地仓库"></a>1.2 创建并操作一个本地仓库</h3><p>创建一个本地仓库，只需要您在工作目录下使用命令 <code>git init</code> 即可。此命令会在工作目录的根目录下创建 <code>.git</code> 目录，即本地的 Git 仓库。但是，此时，您的 Git 本地仓库是空的，我们需要将工作目录中的文件加入 Git 的跟踪：</p>
 <p><img src="/zh-CN/ad2d8036/init.png" alt="git init"></p>
 <p>命令 <code>git add .</code> 将工作目录的所有文件由未跟踪状态转换为跟踪状态，并存储在暂存区。如果您仅仅只需要跟踪 <code>A.md</code>，那么您可以这样：</p>
 <pre class="line-numbers language-sh"><code class="language-sh">$ git add A.md<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>vscode（一个十分强大的编辑器） 可以显示追踪的状态：</p>
 <p><img src="/zh-CN/ad2d8036/add.png" alt="git add"></p>
+<p>为了查看文件存储的状态，您可以使用 <code>git staus -s</code>：</p>
+<p><img src="/zh-CN/ad2d8036/modify.png" alt="git status"></p>
+<p><code>git status</code> 仅仅可以看出文件级别的不同状态，而如果您想要获悉文件的内容之间的不同，可以使用 <code>git diff</code> 获取工作目录中当前文件和暂存区域快照之间的差异：</p>
+<p><img src="/zh-CN/ad2d8036/diff.png" alt="git diff"></p>
+<p><code>git diff</code> 本身只显示尚未暂存的改动，而不是自上次提交以来所做的所有改动，若要查看已暂存的将要添加到下次提交里的内容，可以用 <code>git diff --staged</code> 命令。</p>
+<p>您总会有一些文件不希望被 Git 追踪（比如一些机密文件），此时您可以创建文件 <code>.gitignore</code> 并将那些不希望被追踪的文件名称写入到 <code>.gitignore</code> 中（在 <a href="https://github.com/github/gitignore" target="_blank" rel="noopener">https://github.com/github/gitignore</a> 中提供了一些 <code>.gitignore</code> 模板可供参考）。文件 <code>.gitignore</code> 的格式规范如下：</p>
+<ul>
+<li>所有空行或者以 <code>#</code> 开头的行都会被 Git 忽略。</li>
+<li>可以使用标准的 glob 模式匹配。</li>
+<li>以（<code>/</code>）开头防止递归。</li>
+<li>以（<code>/</code>）结尾指定目录。</li>
+<li>惊叹号（<code>!</code>）取反要忽略指定模式以外的文件或目录。</li>
+</ul>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -956,7 +969,7 @@ $ git config --global user.email 邮箱<span aria-hidden="true" class="line-numb
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">6.5k</span>&nbsp;字
+                class="white-color">6.8k</span>&nbsp;字
             
             
             
