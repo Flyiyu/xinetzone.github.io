@@ -405,10 +405,6 @@
                                 <span class="chip bg-color">github</span>
                             </a>
                         
-                            <a href="/tags/git-submodule/" target="_blank">
-                                <span class="chip bg-color">git submodule</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -436,14 +432,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.6k
+                        1.9k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        5 分
+                        6 分
                     </div>
                     
                 
@@ -510,7 +506,7 @@ $ git config --global user.email 邮箱<span aria-hidden="true" class="line-numb
 <li>以（<code>/</code>）结尾指定目录。</li>
 <li>惊叹号（<code>!</code>）取反要忽略指定模式以外的文件或目录。</li>
 </ul>
-<p>当您通过 <code>git status</code> 查看文件的状态为均已经暂存时，您便可以使用 <code>git commit -m "提交的信息"</code> 命令将文件的变动提交到仓库了。提交时记录的是放在暂存区域的快照，并以 SHA-1 校验码进行标识方便之后的版本转换。</p>
+<p>当您通过 <code>git status</code> 查看文件的状态为均已经暂存时，您便可以使用 <code>git commit -m "提交的信息"</code> 命令将文件的变动提交到仓库了。提交时记录的是放在暂存区域的快照，并以 SHA-1 校验码进行标识方便之后的版本转换。更多命令可以由下图解读：</p>
 <pre class="mermaid">graph LR
 A(History) --git reset -- files--&gt; B(Staged)
 B --git checkout -- files--&gt; C(Working Directory)
@@ -518,6 +514,9 @@ B --git commit -m --&gt; A
 C --git add files--&gt; B
 C --git commit -a -m --&gt; A
 A --git checkout HEAD -- files--&gt; C</pre>
+
+<p>如果您已经做了多次提交，那么 Git 会将您的提交以时间顺序进行记录，通过 <code>git log</code> 命令可以查看您的提交历史。（更多关于 <code>git log</code> 的用法请参阅 <a href="https://git-scm.com/book/zh/v2/Git-基础-查看提交历史" target="_blank" rel="noopener">https://git-scm.com/book/zh/v2/Git-基础-查看提交历史</a>）。而您的每次提交均被 Git 以 SHA-1 码记录，这样一来，您便可以依据其将工作目录恢复到某个过去的时间节点。假如，您已经回到工作目录过去的某个时间节点，而您又想回到未来（相对于当前时间节点），那么，您可以借助 <code>git reflog</code> 来查找“未来”的时间节点，然后使用 <code>git checkout ID</code> 进行穿梭（ID 指的是 SHA-1 码）。工作目录的时间节点的状态是由 HEAD 进行指示的，故而，您也可以使用 <code>git reset --hard commit_id</code> 不断的切换 HEAD 达到穿梭时间的效果。</p>
+<p>有时候您提交完了才发现漏掉了几个文件没有添加，或者提交信息写错了。 此时，可以运行 <code>git commit -a -m</code> 提交命令尝试重新提交（其中 <code>-a</code> 表示 <code>--amend</code>）。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -806,10 +805,6 @@ A --git checkout HEAD -- files--&gt; C</pre>
                         <span class="chip bg-color">github</span>
                     </a>
                     
-                    <a href="/tags/git-submodule/" target="_blank">
-                        <span class="chip bg-color">git submodule</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -977,7 +972,7 @@ A --git checkout HEAD -- files--&gt; C</pre>
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">6.9k</span>&nbsp;字
+                class="white-color">7.2k</span>&nbsp;字
             
             
             
