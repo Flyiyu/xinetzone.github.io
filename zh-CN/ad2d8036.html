@@ -432,14 +432,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.4k
+                        3.1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        9 分
+                        11 分
                     </div>
                     
                 
@@ -523,8 +523,32 @@ A --git checkout HEAD -- files--&gt; C</pre>
 <pre class="line-numbers language-sh"><code class="language-sh">$ git clone --bare my_project my_project.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>该命令实现了将 <code>my_project/.git</code> 复制到 <code>my_project.git</code> 目录中的作用，而 <code>my_project.git</code> 便是一个裸仓库。为了让裸仓库发挥分布式的作用，需要将其放到服务器上并设置你的协议。其他拥有服务器的访问或读写权限的电脑将可以通过如下方式进行复刻：</p>
 <pre class="line-numbers language-sh"><code class="language-sh">$ git clone user@git.example.com:/opt/git/my_project.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>其中， <code>user@git.example.com</code> 代表服务器的地址，而 <code>/opt/git/my_project.git</code> 代表服务器上裸仓库所在路径。本文不展开说明如何构建服务器，如果您想要了解构建服务器的详细信息，可以查看：<a href="https://git-scm.com/book/zh/v2/服务器上的-Git-在服务器上搭建-Git" target="_blank" rel="noopener">服务器上的 Git - 在服务器上搭建 Git</a>（<a href="https://git-scm.com/book/zh/v2/服务器上的-Git-在服务器上搭建-Git" target="_blank" rel="noopener">https://git-scm.com/book/zh/v2/服务器上的-Git-在服务器上搭建-Git</a>） 或者 GitBlit（<a href="http://gitblit.com/" target="_blank" rel="noopener">http://gitblit.com/</a>）。本文将使用目前最大的 Git 托管平台——GitHub 这一 Git 服务器。</p>
-<h4 id="1-4-1-HEAD"><a href="#1-4-1-HEAD" class="headerlink" title="1.4.1 HEAD"></a>1.4.1 HEAD</h4><p>HEAD 是当前分支引用的指针，它总是指向该分支上的最后一次提交。 这表示 HEAD 将是下一次提交的父结点。 通常，理解 HEAD 的最简方式，就是将它看做 你的上一次提交 的快照。<br>其实，查看快照的样子很容易。 下例就显示了 HEAD 快照实际的目录列表，以及其中每个文件的 SHA-1 校验和：</p>
+<p>其中， <code>user@git.example.com</code> 代表服务器的地址，而 <code>/opt/git/my_project.git</code> 代表服务器上裸仓库所在路径。本文不展开说明如何构建服务器，如果您想要了解构建服务器的详细信息，可以查看：<a href="https://git-scm.com/book/zh/v2/服务器上的-Git-在服务器上搭建-Git" target="_blank" rel="noopener">服务器上的 Git - 在服务器上搭建 Git</a>（<a href="https://git-scm.com/book/zh/v2/服务器上的-Git-在服务器上搭建-Git" target="_blank" rel="noopener">https://git-scm.com/book/zh/v2/服务器上的-Git-在服务器上搭建-Git</a>） 或者 GitBlit（<a href="http://gitblit.com/" target="_blank" rel="noopener">http://gitblit.com/</a>）。本文将使用目前最大的 Git 托管平台——GitHub 这一 Git 服务器（详细内容见 <a href="https://git-scm.com/book/zh/v2/GitHub-账户的创建和配置" target="_blank" rel="noopener">https://git-scm.com/book/zh/v2/GitHub-账户的创建和配置</a>）。</p>
+<p>假如从 GitHub 上搜寻到一个不错的仓库，您想要将其加入到自己的项目中去，您可以这样做：</p>
+<p><img src="/zh-CN/ad2d8036/fork.png" alt="fork"></p>
+<p>点击右边的 <code>fork</code> 按钮，然后，选择您的用户名或者组织，将其复刻下来。这样，您便有了对该仓库的读写以及<strong>推送</strong>（将本地仓库同步到远端仓库）的权限。使用 <code>git clone</code> 的命令将远端仓库克隆到本地，克隆的网址可以这样获取：</p>
+<p><img src="/zh-CN/ad2d8036/clone.png" alt="git clone"></p>
+<p>当您克隆到本地后，可以使用 <code>git remote -v</code> 命令查看远程仓库使用的 Git 保存的简写与其对应的 URL，比如：</p>
+<pre class="line-numbers language-sh"><code class="language-sh">origin  https://github.com/xinetzone/xinet-matery.git (fetch)
+origin  https://github.com/xinetzone/xinet-matery.git (push)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>其中 <code>origin</code> 便是别名。如果您想要拥有多个远程仓库，可以运行 <code>git remote add &lt;shortname&gt; &lt;url&gt;</code> 添加一个新的远程 Git 仓库，同时指定一个你可以轻松引用的简写。</p>
+<p>为了方便说明我们创建两个本地仓库 <code>server/D.git</code> 与 <code>server/R.git</code>，然后在目录 <code>T</code> 中添加这两个仓库：</p>
+<p><img src="/zh-CN/ad2d8036/remote.png" alt="git remote add"></p>
+<p>从上图可以看出，目录 <code>T</code> 下有两个远程仓库，它们的别名分别为：<code>D</code> 与 <code>R</code>。现在您可以在命令行中使用字符串 <code>D</code> 来代替整个 URL。 例如，如果你想拉取 <code>D</code> 所指代的仓库,可以运行 <code>git fetch D</code>，这个命令会访问远程仓库，从中拉取所有你还没有的数据。执行完成后，你将会拥有那个远程仓库中所有分支的引用，接着，您运行 <code>git merge D/master</code> 命令便可以将 <code>D</code> 合并到当前目录。</p>
+<p>如果你使用 <code>git clone</code> 命令克隆了一个仓库，该命令会自动将其添加为远程仓库并默认以 “origin” 为简写。</p>
+<p>如果您在当前工作目录下做了修改，并且，想要将其分享，只需要执行 <code>git push [remote-name] [branch-name]</code> 命令即可。比如：</p>
+<pre class="line-numbers language-sh"><code class="language-sh">$ git push D master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果您想查看远程仓库的更多详细信息，可以运行 <code>git remote show [remote-name]</code>；如果您想要重命名引用的名称可以运行 <code>git remote rename</code>；如果您想要删除远程仓库可以运行 <code>git remote rm</code>。</p>
+<h3 id="1-4-标签"><a href="#1-4-标签" class="headerlink" title="1.4 标签"></a>1.4 标签</h3><p><a href="https://git-scm.com/book/zh/v2/Git-基础-打标签" target="_blank" rel="noopener">2.6 Git 基础 - 打标签</a></p>
+<h3 id="1-5-分支"><a href="#1-5-分支" class="headerlink" title="1.5 分支"></a>1.5 分支</h3><p>前面的内容，我们仅仅涉及 mater 分支，</p>
+<p><a href="https://git-scm.com/book/zh/v2/Git-分支-分支简介" target="_blank" rel="noopener">3.1 Git 分支 - 分支简介</a></p>
+<h3 id="1-6"><a href="#1-6" class="headerlink" title="1.6"></a>1.6</h3><h4 id="1-6-1-HEAD"><a href="#1-6-1-HEAD" class="headerlink" title="1.6.1 HEAD"></a>1.6.1 HEAD</h4><p>HEAD 是当前分支引用的指针，它总是指向该分支上的最后一次提交。 这表示 HEAD 将是下一次提交的父结点。 通常，理解 HEAD 的最简方式，就是将它看做 你的上一次提交 的快照。<br>其实，查看快照的样子很容易。 下例就显示了 HEAD 快照实际的目录列表，以及其中每个文件的 SHA-1 校验和：</p>
+<p><a href="https://www.runoob.com/manual/git-guide/" target="_blank" rel="noopener">https://www.runoob.com/manual/git-guide/</a></p>
+<p><a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html" target="_blank" rel="noopener">http://marklodato.github.io/visual-git-guide/index-zh-cn.html</a></p>
+<p><a href="https://git-scm.com/book/zh/v2/Git-工具-重置揭密#r_git_reset" target="_blank" rel="noopener">https://git-scm.com/book/zh/v2/Git-工具-重置揭密#r_git_reset</a></p>
+<p><a href="https://www.liaoxuefeng.com/wiki/896043488029600/898732864121440" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/896043488029600/898732864121440</a></p>
+<p><a href="https://git-scm.com/book/zh/v2/分布式-Git-分布式工作流程" target="_blank" rel="noopener">https://git-scm.com/book/zh/v2/分布式-Git-分布式工作流程</a></p>
+<p><a href="https://git-scm.com/book/zh/v2/GitHub-对项目做出贡献" target="_blank" rel="noopener">https://git-scm.com/book/zh/v2/GitHub-对项目做出贡献</a></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -980,7 +1004,7 @@ A --git checkout HEAD -- files--&gt; C</pre>
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">7.8k</span>&nbsp;字
+                class="white-color">8.5k</span>&nbsp;字
             
             
             
