@@ -432,14 +432,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        3.6k
+                        3.8k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        13 分
+                        14 分
                     </div>
                     
                 
@@ -490,15 +490,16 @@ $ git config --global user.email 邮箱<span aria-hidden="true" class="line-numb
 <p>您便轻松的获取 <code>git config</code> 的离线帮助文档。</p>
 <h3 id="1-2-创建并操作一个本地仓库"><a href="#1-2-创建并操作一个本地仓库" class="headerlink" title="1.2 创建并操作一个本地仓库"></a>1.2 创建并操作一个本地仓库</h3><p>创建一个本地仓库，只需要您在工作目录下使用命令 <code>git init</code> 即可。此命令会在工作目录的根目录下创建 <code>.git</code> 目录，即本地的 Git 仓库。但是，此时，您的 Git 本地仓库是空的，我们需要将工作目录中的文件加入 Git 的跟踪：</p>
 <p><img src="/zh-CN/ad2d8036/init.png" alt="git init"></p>
-<p>命令 <code>git add .</code> 将工作目录的所有文件由未跟踪状态转换为跟踪状态，并存储在暂存区（注意，这里说“存储”并不准确，应该说是将文件的内容的指针放入 <code>.git/index</code> 中进行存储）。如果您仅仅只需要跟踪 <code>A.md</code>，那么您可以这样：</p>
+<p>命令 <code>git add .</code> 将工作目录的所有文件由未跟踪状态转换为跟踪状态，并存储在暂存区（注意，这里说“存储”并不准确，应该说是将文件的内容的指针放入 <code>.git/index</code> 中进行存储），以备下次提交。如果您仅仅只需要跟踪 <code>A.md</code>，那么您可以这样：</p>
 <pre class="line-numbers language-sh"><code class="language-sh">$ git add A.md<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>vscode（一个十分强大的编辑器） 可以显示追踪的状态：</p>
 <p><img src="/zh-CN/ad2d8036/add.png" alt="git add"></p>
 <p>为了查看文件存储的状态，您可以使用 <code>git staus -s</code>：</p>
 <p><img src="/zh-CN/ad2d8036/modify.png" alt="git status"></p>
-<p><code>git status</code> 仅仅可以看出文件级别的不同状态，而如果您想要获悉文件的内容之间的不同，可以使用 <code>git diff</code> 获取工作目录中当前文件和暂存区域快照之间的差异：</p>
+<p><code>git status</code> 仅仅可以看出文件级别的（与暂存区的）不同状态，而如果您想要获悉文件的内容之间的不同，可以使用 <code>git diff</code> 获取工作目录中当前文件和暂存区域快照之间的差异：</p>
 <p><img src="/zh-CN/ad2d8036/diff.png" alt="git diff"></p>
-<p><code>git diff</code> 本身只显示尚未暂存的改动，而不是自上次提交以来所做的所有改动，若要查看已暂存的将要添加到下次提交里的内容，可以用 <code>git diff --staged</code> 命令。</p>
+<p><code>git diff</code> 本身只显示尚未暂存的改动，而不是自上次提交以来所做的所有改动，若要查看已暂存的将要添加到下次提交里的内容，可以用 <code>git diff --staged</code> 命令；命令 <code>git diff --check</code> 可以用来检测可能存在由空白符引起的问题；Git 的 <code>...</code> 语法：<code>git diff A...B</code> 用于查找分支 A 同 A 与 B 的共同跟节点的不同，可看图理解：</p>
+<p><img src="/zh-CN/ad2d8036/diffAB.png" alt="git diff A...B"></p>
 <p>您总会有一些文件不希望被 Git 追踪（比如一些机密文件），此时您可以创建文件 <code>.gitignore</code> 并将那些不希望被追踪的文件名称写入到 <code>.gitignore</code> 中（在 <a href="https://github.com/github/gitignore" target="_blank" rel="noopener">https://github.com/github/gitignore</a> 中提供了一些 <code>.gitignore</code> 模板可供参考）。文件 <code>.gitignore</code> 的格式规范如下：</p>
 <ul>
 <li>所有空行或者以 <code>#</code> 开头的行都会被 Git 忽略。</li>
@@ -507,7 +508,7 @@ $ git config --global user.email 邮箱<span aria-hidden="true" class="line-numb
 <li>以（<code>/</code>）结尾指定目录。</li>
 <li>惊叹号（<code>!</code>）取反要忽略指定模式以外的文件或目录。</li>
 </ul>
-<p>当您通过 <code>git status</code> 查看文件的状态为均已经暂存时，您便可以使用 <code>git commit -m "提交的信息"</code> 命令将文件的变动提交到仓库了。提交时记录的是放在暂存区域的快照，并以 SHA-1 校验码进行标识方便之后的版本转换。更多命令可以由下图解读：</p>
+<p>当您通过 <code>git status</code> 查看文件的状态为均已经暂存时，您便可以使用 <code>git commit -m "提交的信息"</code> 命令将所有通过 git add 暂存的文件内容在数据库中创建一个持久的快照，然后将当前分支上的分支指针（即 HEAD）移到其之上。提交时记录的是放在暂存区域的快照，并以 SHA-1 校验码进行标识方便之后的版本转换。更多命令可以由下图解读：</p>
 <pre class="mermaid">graph LR
 A(History) --git reset -- files--&gt; B(Staged)
 B --git checkout -- files--&gt; C(Working Directory)
@@ -561,7 +562,11 @@ origin  https://github.com/xinetzone/xinet-matery.git (push)<span aria-hidden="t
 <li>合并：<code>git merge branch_name</code></li>
 <li>删除：<code>git branch -d branch_name</code></li>
 </ul>
-<script>
+<h3 id="1-6-vscode-与-Git-集成"><a href="#1-6-vscode-与-Git-集成" class="headerlink" title="1.6 vscode 与 Git 集成"></a>1.6 vscode 与 Git 集成</h3><p>为了让 Git 更好的与 vscode 集成，提供更丰富的 commit 信息，您可以这样：</p>
+<pre class="line-numbers language-sh"><code class="language-sh">$ git config --global core.editor "code --wait"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>将 vscode 作为 Git 的内核编辑器。</p>
+<h2 id="2-使用-Git-管理项目"><a href="#2-使用-Git-管理项目" class="headerlink" title="2 使用 Git 管理项目"></a>2 使用 Git 管理项目</h2><p>前面介绍了 Git 的基础知识，本文剩余部分将介绍如何利用 Git 更好的管理您的项目。</p>
+<h3 id="2-1-对-Microsoft-Word-进行版本控制"><a href="#2-1-对-Microsoft-Word-进行版本控制" class="headerlink" title="2.1 对 Microsoft Word 进行版本控制"></a>2.1 对 Microsoft Word 进行版本控制</h3><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1016,7 +1021,7 @@ origin  https://github.com/xinetzone/xinet-matery.git (push)<span aria-hidden="t
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.9k</span>&nbsp;字
+                class="white-color">9.2k</span>&nbsp;字
             
             
             
