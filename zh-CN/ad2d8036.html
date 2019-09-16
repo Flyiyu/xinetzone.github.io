@@ -432,14 +432,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        3.8k
+                        4.2k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        14 分
+                        15 分
                     </div>
                     
                 
@@ -566,7 +566,28 @@ origin  https://github.com/xinetzone/xinet-matery.git (push)<span aria-hidden="t
 <pre class="line-numbers language-sh"><code class="language-sh">$ git config --global core.editor "code --wait"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>将 vscode 作为 Git 的内核编辑器。</p>
 <h2 id="2-使用-Git-管理项目"><a href="#2-使用-Git-管理项目" class="headerlink" title="2 使用 Git 管理项目"></a>2 使用 Git 管理项目</h2><p>前面介绍了 Git 的基础知识，本文剩余部分将介绍如何利用 Git 更好的管理您的项目。</p>
-<h3 id="2-1-对-Microsoft-Word-进行版本控制"><a href="#2-1-对-Microsoft-Word-进行版本控制" class="headerlink" title="2.1 对 Microsoft Word 进行版本控制"></a>2.1 对 Microsoft Word 进行版本控制</h3><script>
+<h3 id="2-1-对-Microsoft-Office-进行版本控制"><a href="#2-1-对-Microsoft-Office-进行版本控制" class="headerlink" title="2.1 对 Microsoft Office 进行版本控制"></a>2.1 对 Microsoft Office 进行版本控制</h3><p>最新版的 Git，已经支持对 <code>.docx</code> 的控制。下面我们简单做个小测验：</p>
+<ol>
+<li>创建文件 <code>A.docx</code>，并写入内容：<code>这是一个测试！</code>，之后纳入 Git 管理：</li>
+</ol>
+<p><img src="/zh-CN/ad2d8036/A.png" alt="一个测试"></p>
+<p>接着我们修改 <code>A.docx</code> 中的内容为 <code>这是一个被修改的测试哦！</code>：</p>
+<p><img src="/zh-CN/ad2d8036/mod_docx.png" alt="一个被修改的 word"></p>
+<p>从上图可以看出修改的内容与之前的（对 <code>.docx</code> 进行）比较。如果您还不满足，想要使用 Git 比较 <code>.xlsx</code> 文件的话，您可以参考：<a href="http://programmaticallyspeaking.com/git-diffing-excel-files.html" target="_blank" rel="noopener">http://programmaticallyspeaking.com/git-diffing-excel-files.html</a>。</p>
+<p>对于使用命令行，大多数人都是有点抵触的，好在有需求就有市场，在 Windows 系统下使用 Git，我们可以借助一个十分强大的 GUI 软件：TortoiseGit。</p>
+<p>首先，我们需要下载并安装 TortoiseGit。下载网址：<a href="https://tortoisegit.org/download/" target="_blank" rel="noopener">https://tortoisegit.org/download/</a>，我们选择 64 位进行下载，并且需要下载中文语言包：</p>
+<p><img src="/zh-CN/ad2d8036/install_tortoisegit.png" alt="TortoiseGit 下载"></p>
+<p>下载好之后，按照提示默认安装即可，但是，安装中文包的最后一步需要按下图选择打勾：</p>
+<p><img src="/zh-CN/ad2d8036/S.png" alt="安装 TortoiseGit 中文包"></p>
+<p>关于 TortoiseGit 的使用细节可参考其手册：<a href="https://tortoisegit.org/docs/" target="_blank" rel="noopener">https://tortoisegit.org/docs/</a>。其实，TortoiseGit 被集成在了右键快捷键中：</p>
+<p><img src="/zh-CN/ad2d8036/TortoiseGit.png" alt="TortoiseGit 集成于右键"></p>
+<p>从上图可以清晰的看到 Git 的大部分功能都被集成到了右键快捷键中。使用 TortoiseGit 比较差异将比较简单：</p>
+<p><img src="/zh-CN/ad2d8036/SS.png" alt="TortoiseGit 比较 docx"></p>
+<p>接着，将打开 Word，界面如下：</p>
+<p><img src="/zh-CN/ad2d8036/SSS.png" alt="TortoiseGit 比较 docx 界面"></p>
+<p>这样的界面将会更加直观！</p>
+<p>TortoiseGit 的强大不仅仅如此，它还可以直接比较 <code>.xlsx</code>、<code>.pptx</code> 等。换句话说，TortoiseGit 与 Microsoft office 完美的结合在了一起，为您的 office 管理提供了一个十分高大上的 Git 支持。</p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1021,7 +1042,7 @@ origin  https://github.com/xinetzone/xinet-matery.git (push)<span aria-hidden="t
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">9.2k</span>&nbsp;字
+                class="white-color">9.6k</span>&nbsp;字
             
             
             
