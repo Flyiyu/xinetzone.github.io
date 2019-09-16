@@ -432,14 +432,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        3.1k
+                        3.6k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        11 分
+                        13 分
                     </div>
                     
                 
@@ -538,17 +538,29 @@ origin  https://github.com/xinetzone/xinet-matery.git (push)<span aria-hidden="t
 <p>如果你使用 <code>git clone</code> 命令克隆了一个仓库，该命令会自动将其添加为远程仓库并默认以 “origin” 为简写。</p>
 <p>如果您在当前工作目录下做了修改，并且，想要将其分享，只需要执行 <code>git push [remote-name] [branch-name]</code> 命令即可。比如：</p>
 <pre class="line-numbers language-sh"><code class="language-sh">$ git push D master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>如果您想查看远程仓库的更多详细信息，可以运行 <code>git remote show [remote-name]</code>；如果您想要重命名引用的名称可以运行 <code>git remote rename</code>；如果您想要删除远程仓库可以运行 <code>git remote rm</code>。</p>
-<h3 id="1-4-标签"><a href="#1-4-标签" class="headerlink" title="1.4 标签"></a>1.4 标签</h3><p><a href="https://git-scm.com/book/zh/v2/Git-基础-打标签" target="_blank" rel="noopener">2.6 Git 基础 - 打标签</a></p>
-<h3 id="1-5-分支"><a href="#1-5-分支" class="headerlink" title="1.5 分支"></a>1.5 分支</h3><p>前面的内容，我们仅仅涉及 mater 分支，</p>
-<p><a href="https://git-scm.com/book/zh/v2/Git-分支-分支简介" target="_blank" rel="noopener">3.1 Git 分支 - 分支简介</a></p>
-<h3 id="1-6"><a href="#1-6" class="headerlink" title="1.6"></a>1.6</h3><h4 id="1-6-1-HEAD"><a href="#1-6-1-HEAD" class="headerlink" title="1.6.1 HEAD"></a>1.6.1 HEAD</h4><p>HEAD 是当前分支引用的指针，它总是指向该分支上的最后一次提交。 这表示 HEAD 将是下一次提交的父结点。 通常，理解 HEAD 的最简方式，就是将它看做 你的上一次提交 的快照。<br>其实，查看快照的样子很容易。 下例就显示了 HEAD 快照实际的目录列表，以及其中每个文件的 SHA-1 校验和：</p>
-<p><a href="https://www.runoob.com/manual/git-guide/" target="_blank" rel="noopener">https://www.runoob.com/manual/git-guide/</a></p>
-<p><a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html" target="_blank" rel="noopener">http://marklodato.github.io/visual-git-guide/index-zh-cn.html</a></p>
-<p><a href="https://git-scm.com/book/zh/v2/Git-工具-重置揭密#r_git_reset" target="_blank" rel="noopener">https://git-scm.com/book/zh/v2/Git-工具-重置揭密#r_git_reset</a></p>
-<p><a href="https://www.liaoxuefeng.com/wiki/896043488029600/898732864121440" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/896043488029600/898732864121440</a></p>
-<p><a href="https://git-scm.com/book/zh/v2/分布式-Git-分布式工作流程" target="_blank" rel="noopener">https://git-scm.com/book/zh/v2/分布式-Git-分布式工作流程</a></p>
-<p><a href="https://git-scm.com/book/zh/v2/GitHub-对项目做出贡献" target="_blank" rel="noopener">https://git-scm.com/book/zh/v2/GitHub-对项目做出贡献</a></p>
+<p>如果您想查看远程仓库的更多详细信息，可以运行 <code>git remote show [remote-name]</code>；如果您想要重命名引用的名称可以运行 <code>git remote rename</code>；如果您想要删除远程仓库可以运行 <code>git remote rm</code> 或者 <code>git push origin --delete branch_name</code>。</p>
+<h3 id="1-4-标签"><a href="#1-4-标签" class="headerlink" title="1.4 标签"></a>1.4 标签</h3><p>在切换不同的时间节点时，可以借助 commit 的 ID，但是，此 ID 有点反人类，太长了并且不好记忆。为了人们可以更好的管理历史节点，我们需要给那些重要的历史节点打上标签，这样一来，人们通过这些有实际语义的标签进行管理将更加方便。</p>
+<p>Git 主要使用两种类型的标签：轻量标签（lightweight）与附注标签（annotated）。</p>
+<h4 id="1-4-1-附注标签"><a href="#1-4-1-附注标签" class="headerlink" title="1.4.1 附注标签"></a>1.4.1 附注标签</h4><p>附注标签的创建可以这样：</p>
+<pre class="line-numbers language-sh"><code class="language-sh">$ git tag -a v1.4 -m "我的版本 1.4"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>您可以使用 <code>git tag</code> 或者 <code>git tag -l 'v1.4.1*'</code> 列出当前的标签。或者使用 <code>git show v1.4</code> 命令查看标签信息与其对应的提交信息。</p>
+<h4 id="1-4-2-轻量标签"><a href="#1-4-2-轻量标签" class="headerlink" title="1.4.2 轻量标签"></a>1.4.2 轻量标签</h4><p>轻量标签不需要提供 commit 信息，只需要：</p>
+<pre class="line-numbers language-sh"><code class="language-sh">$ git tag v1.4-1q<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>您亦可以对历史提交的某个 commit ID 进行打标，比如：</p>
+<pre class="line-numbers language-sh"><code class="language-sh">$ git tag -a v1.1 ead28ed<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="1-4-3-管理标签"><a href="#1-4-3-管理标签" class="headerlink" title="1.4.3 管理标签"></a>1.4.3 管理标签</h4><p>您可以使用命令 <code>git push origin [tagname]</code> 将标签推送到远端；如果想要一次推送多个标签，可以是使用 <code>git push origin --tags</code>。</p>
+<p>当然，您也可以使用命令 <code>git tag -d &lt;tagname&gt;</code> 删除标签。如果也要将远端的标签删除，可以使用命令 <code>git push &lt;remote&gt; :refs/tags/&lt;tagname&gt;</code>，比如：</p>
+<pre class="line-numbers language-sh"><code class="language-sh">$ git push origin :refs/tags/v1.4-1q<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="1-5-分支"><a href="#1-5-分支" class="headerlink" title="1.5 分支"></a>1.5 分支</h3><p><strong>分支</strong> 可以想象为不同维度的平行宇宙，在同一个时间节点可以并行的存在不同的支线来发展项目的不同功能。专业点的说法：Git 的分支仅仅是指向提交对象的可变指针，（Git 的默认分支名称为 master）每次进行 <code>git commit</code> 操作，都将会移动该指针。分支就好比河流拥有的支流，只不过在这些支流上面存在着无法移动的“指针”（git tag）与可以移动的“指针”（git branch）。</p>
+<p>分支的创建需要使用 <code>git branch</code>，比如：</p>
+<pre class="line-numbers language-sh"><code class="language-sh">$ git branch develop<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>可以移动？那么我们该如何判断工作目录所处的状态呢？（简单点说，我们该如何判断我们 “now” 的位置。）这个很简单，Git 中还有一个特殊的指针 <code>HEAD</code>，它总是指向当前所在的分支所在的时间节点。您可以使用 <code>git log --oneline --decorate</code> 命令查看各个分支的指针。</p>
+<p>您若要在不同的分支之间进行跳转，可以使用 <code>git checkout [分支名]</code> 进行切换。有没有命令将创建分支与切换分支进行合并的呢？当然有了，它就是：<code>git branch -b &lt;分支名&gt;</code>。</p>
+<p>关于分支的命令还有：</p>
+<ul>
+<li>合并：<code>git merge branch_name</code></li>
+<li>删除：<code>git branch -d branch_name</code></li>
+</ul>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1004,7 +1016,7 @@ origin  https://github.com/xinetzone/xinet-matery.git (push)<span aria-hidden="t
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.5k</span>&nbsp;字
+                class="white-color">8.9k</span>&nbsp;字
             
             
             
