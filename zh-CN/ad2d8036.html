@@ -432,14 +432,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        4.3k
+                        4.8k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        16 分
+                        18 分
                     </div>
                     
                 
@@ -591,6 +591,36 @@ origin  https://github.com/xinetzone/xinet-matery.git (push)<span aria-hidden="t
 <p><img src="/zh-CN/ad2d8036/Tortoiseclone.png" alt="TortoiseGit clone"></p>
 <p>需要输入 <code>lxw</code> 对应的密码：</p>
 <p><img src="/zh-CN/ad2d8036/mima.png" alt="TortoiseGit clone 密码"></p>
+<p>因为是刚刚克隆（<code>git clone</code>）的仓库，其中的暂存区与工作目录均是干净的，所以，目录图标上会有蓝色的对勾：</p>
+<p><img src="/zh-CN/ad2d8036/test.png" alt="test"></p>
+<p>下面使用 vscode 打开工作目录 <code>test</code> 并创建一个 git bash 终端。该项目已经存在自述文档（<code>README.md</code>）与 <code>.gitignore</code>（令 Git 忽视的文件列表）。为了更好的展示 TortoiseGit 与的集成效果，下面我们将演示如何利用 TortoiseGit 管理 <code>.docx</code> 文档。</p>
+<p>我们先创建 <code>A.docx</code> 并写入内容：我是 A。由于 <code>A.docx</code> 没有加入到 Git 管理，所以其图标为空：</p>
+<p><img src="/zh-CN/ad2d8036/AA.png" alt="A"></p>
+<p>接着，将 <code>A.docx</code> 纳入 Git 管理：</p>
+<p><img src="/zh-CN/ad2d8036/git_add.png" alt="右键添加"></p>
+<p>接着弹出一个窗口，列出所有未被加入到 Git 管理的文件（即 <code>git add</code> 操作）：</p>
+<p><img src="/zh-CN/ad2d8036/add1.png" alt="列出未被 Git 追踪的文档"><br><img src="/zh-CN/ad2d8036/add2.png" alt="追踪文档"></p>
+<p>自此，完成了将 <code>A.docx</code> 纳入 Git 的 <code>index</code> （即暂存区）的操作，刷新目录，可以看到 <code>A.docx</code> 多了一个蓝色的 $+$ 图标：</p>
+<p><img src="/zh-CN/ad2d8036/plus.png" alt="完成 git add"></p>
+<p>至此，如果您没有其他需要加入到暂存区的文档，您可以将这些暂存区的信息提交（<code>git commit</code>）到本地仓库，并写上简要的说明：</p>
+<p><img src="/zh-CN/ad2d8036/master.png" alt="提交到本地 master"></p>
+<p><img src="/zh-CN/ad2d8036/commit.png" alt="写上简要的说明"></p>
+<p>如果您还想要与其他人共享编写 <code>A.docx</code>，您需要将其推送（<code>git push</code>）到远端服务器：</p>
+<p><img src="/zh-CN/ad2d8036/push.png" alt="git push"></p>
+<p>其他人只需要在他们克隆的副本进行拉取（<code>git pull</code>）便可获得您的更新：</p>
+<p><img src="/zh-CN/ad2d8036/pull.png" alt="git pull"></p>
+<p>如果某人 K 拉取之后对 <code>A.docx</code> 进行了修改，添加内容：</p>
+<pre class="line-numbers language-doc"><code class="language-doc">做了 test1。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>而您自己也做了修改，添加内容：</p>
+<pre class="line-numbers language-doc"><code class="language-doc">学习了 M。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>之后，您先将变动推送到了远端。紧接着 K 也将其做的改动推送到远端，由于您们所做的改动有冲突，所以推送失败：</p>
+<p><img src="/zh-CN/ad2d8036/push_error.png" alt="存在冲突"></p>
+<p>解决冲突的办法有两种：</p>
+<ol>
+<li>创建新的分支（<code>git branch</code>）与发生冲突的分支分开，解决冲突交给管理员（负责管理整个项目的人）；</li>
+<li>先将远端的更新获取（<code>git fetch</code>）下来（见下图），之后再解决冲突。</li>
+</ol>
+<p><img src="/zh-CN/ad2d8036/fetch.png" alt="git fetch"></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1046,7 +1076,7 @@ origin  https://github.com/xinetzone/xinet-matery.git (push)<span aria-hidden="t
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">9.7k</span>&nbsp;字
+                class="white-color">10.2k</span>&nbsp;字
             
             
             
