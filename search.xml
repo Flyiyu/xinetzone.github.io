@@ -67,7 +67,7 @@
       
       <categories>
           
-          <category> 开源项目 </category>
+          <category> 项目 </category>
           
       </categories>
       
@@ -75,6 +75,8 @@
         <tags>
             
             <tag> README </tag>
+            
+            <tag> 开源项目 </tag>
             
         </tags>
       
@@ -92,7 +94,7 @@
       
       <categories>
           
-          <category> hexo </category>
+          <category> 教程 </category>
           
       </categories>
       
@@ -102,8 +104,6 @@
             <tag> github pages </tag>
             
             <tag> hexo </tag>
-            
-            <tag> 教程 </tag>
             
         </tags>
       
@@ -121,7 +121,7 @@
       
       <categories>
           
-          <category> hexo </category>
+          <category> 教程 </category>
           
       </categories>
       
@@ -131,8 +131,6 @@
             <tag> github pages </tag>
             
             <tag> hexo </tag>
-            
-            <tag> 教程 </tag>
             
         </tags>
       
