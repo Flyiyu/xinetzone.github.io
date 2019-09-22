@@ -5,8 +5,8 @@ cover: false
 toc: true
 mathjax: false
 lang: zh-CN
-tags: [github pages, hexo, 教程]
-categories: hexo
+tags: [github pages, hexo]
+categories: 教程
 abbrlink: 41cccb40
 date: 2019-09-02 14:34:07
 password:
@@ -41,33 +41,33 @@ $ npm -v
 
 在你的 GitHub 主页打开如下界面：
 
-{% asset_img 1114626-aa71be3d8b914371.png 创建 repo %}
+![创建 repo](1114626-aa71be3d8b914371.png)
 
 然后如下图所示，输入自己的项目名字，后面一定要加 `.github.io` 后缀，`README`初始化也要勾上。名称一定要和你的github名字完全一样，比如你 `github` 名字叫`abc`，那么仓库名字一定要是 `abc.github.io`。
 
-{% asset_img 1114626-f796295247fb7aba.png   %}
+![](1114626-f796295247fb7aba.png)
 
 然后项目就建成了，点击 `Settings`，向下拉到最后有个 `GitHub Pages`，点击 `Choose a theme` 选择一个主题。将 `GitHub Pages` 生成的网址复制到如下位置：
 
-{% asset_img 1114626-ae9a9d173799c870.png   %}
+![](1114626-ae9a9d173799c870.png)
 
 点击网址 <https://xinetzone.github.io/>，便会显示：
 
-{% asset_img 1114626-93636579128421e5.png   %}
+![](1114626-93636579128421e5.png)
 
 此页面的内容是由 [xinetzone](https://github.com/xinetzone)/**[xinetzone.github.io](https://github.com/xinetzone/xinetzone.github.io)** 根目录的 `README.md` 提供的。
 
-{% asset_img 1114626-97cfccb76ec79543.png   %}
+![](1114626-97cfccb76ec79543.png)
 
 使用 vscode 打开本地的一个文件夹：
 
-{% asset_img 1114626-2126a847e377b804.png   %}
+![](1114626-2126a847e377b804.png)
 
 选择 Git Bash 作为默认：
 
-{% asset_img 1114626-f0f238bc6f947912.png   %}
+![](1114626-f0f238bc6f947912.png)
 
-{% asset_img 1114626-a3e18c31da2eeb5a.png   %}
+![](1114626-a3e18c31da2eeb5a.png)
 
 为了提高 npm 运行速度需要添加淘宝源：
 
@@ -100,7 +100,7 @@ $ npm install
 
 其中 `hexo init` 为网站初始化环境，`npm install` 安装必备的组件，我们可以看到 `blog` 目录下生成如下目录：
 
-{% asset_img 1114626-f1260417e24c3632.png   %}
+![](1114626-f1260417e24c3632.png)
 
 - `node_modules`: 依赖包
 - `public`：存放生成的页面，运行 `hexo g` 便会生成，而 `hexo clean` 便会删除
@@ -111,11 +111,11 @@ $ npm install
 
 这样本地的网站配置也弄好啦，输入 `hexo g` 生成静态网页，然后输入 `hexo s` （hexo serve）打开本地服务器：
 
-{% asset_img 1114626-77606c3fdfd2f043.png   %}
+![](1114626-77606c3fdfd2f043.png)
 
 这样便可以在 `http://localhost:4000` 预览网站了：
 
-{% asset_img 1114626-3de8c569ca663fec.png   %}
+![](1114626-3de8c569ca663fec.png)
 
 使用 `Ctrl + C` 可以把服务关掉。
 
@@ -159,7 +159,7 @@ deploy:
 
 其中  `repository` 可以通过如下方法获取：
 
-{% asset_img 1114626-890059e5643e50f7.png   %}
+![](1114626-890059e5643e50f7.png)
 
 `repository` 修改为你自己的 github 项目地址。接着需要先安装 `deploy-git`，也就是部署的命令，这样你才能用命令部署到 GitHub。接着 `hexo clean` 清除了你之前生成的东西，也可以不加。 `hexo g` 顾名思义，生成静态文章是 `hexo generate` 的缩写 `hexo deploy` 部署文章，可以用 `hexo d` 缩写：
 
@@ -170,7 +170,7 @@ $ hexo clean | hexo g | hexo d
 
 这时打开你的 github.io（<https://xinetzone.github.io/>） 主页就能看到发布的文章：
 
-{% asset_img 1114626-761726a5770eea11.png   %}
+![](1114626-761726a5770eea11.png)
 
 为了添加博客，需要：
 
@@ -243,7 +243,7 @@ post_asset_folder: true # true 支持图片本地上传
 
 设置好之后便可以正常显示结果：
 
-{% asset_img 2019-09-01-170438.png 显示 %}
+![](2019-09-01-170438.png)
 
 可以看出，此时的标题与字体均发生了改变。
 

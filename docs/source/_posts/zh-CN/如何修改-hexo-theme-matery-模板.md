@@ -5,8 +5,8 @@ cover: false
 toc: true
 mathjax: false
 lang: zh-CN
-tags: [github pages, hexo, 教程]
-categories: hexo
+tags: [github pages, hexo]
+categories: 教程
 abbrlink: 3567ebbb
 date: 2019-09-02 21:06:59
 password:

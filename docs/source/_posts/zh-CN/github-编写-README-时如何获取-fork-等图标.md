@@ -5,8 +5,8 @@ cover: true # 表示该文章是否需要加入到首页轮播封面中
 toc: true
 mathjax: false
 lang: zh-CN
-tags: README
-categories: 开源项目
+tags: [README, 开源项目]
+categories: 项目
 abbrlink: f7c6a6b8
 date: 2019-09-02 23:25:07
 password:
@@ -27,7 +27,7 @@ summary: 在 Github 自述文档添加 fork 等动态图标。
 
 那么该如何生成上面的图标效果呢？首先，我们可以借由 <http://hits.dwyl.io/> 网站来获取 `hits` 数：
 
-{% asset_img hits.png hits %}
+![hits](hits.png)
 
 只需要修改
 
