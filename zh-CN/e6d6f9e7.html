@@ -9,10 +9,9 @@
 本章导航：
 
 在 GitHub 上创建个人项目
-将远程仓库与个人项目建立联系
 利用 Git 子模块组织子项目
 
-1 创建个人项目由于构建个人或者公司的私有服务器涉及的知识">
+1 创建个人项目由于构建个人或者公司的私有服务器涉及的知识点太多，本文考虑以 GitHu">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -404,12 +403,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Git/" target="_blank">
-                                <span class="chip bg-color">Git</span>
+                            <a href="/tags/git/" target="_blank">
+                                <span class="chip bg-color">git</span>
                             </a>
                         
-                            <a href="/tags/GitHub/" target="_blank">
-                                <span class="chip bg-color">GitHub</span>
+                            <a href="/tags/github/" target="_blank">
+                                <span class="chip bg-color">github</span>
                             </a>
                         
                     </div>
@@ -439,14 +438,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        354
+                        920
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        3 分
                     </div>
                     
                 
@@ -466,18 +465,47 @@
 <p>本章导航：</p>
 <ul>
 <li>在 GitHub 上创建个人项目</li>
-<li>将<strong>远程仓库</strong>与个人项目建立联系</li>
 <li>利用 Git 子模块组织子项目</li>
 </ul>
 <h2 id="1-创建个人项目"><a href="#1-创建个人项目" class="headerlink" title="1 创建个人项目"></a>1 创建个人项目</h2><p>由于构建个人或者公司的私有服务器涉及的知识点太多，本文考虑以 GitHub 作为远端服务器来构建个人项目。如果您的私有服务器已经搭建好了的话，直接把它当作 GitHub 进行操作即可。因而，本文介绍的创建项目的方法同样适用于私有服务器，区别不过是您提供的服务器的地址不同和仓库的使用权限不同而已。</p>
-<h3 id="1-1-搭建本地仓库"><a href="#1-1-搭建本地仓库" class="headerlink" title="1.1 搭建本地仓库"></a>1.1 搭建本地仓库</h3><p>第 1 步：在 GitHub（<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a>）上创建一个仓库，取名为 <strong>cv-actions</strong>，接着选择 <code>settings</code>：</p>
+<h3 id="1-1-创建一个项目"><a href="#1-1-创建一个项目" class="headerlink" title="1.1 创建一个项目"></a>1.1 创建一个项目</h3><p>第 1 步：在 GitHub（<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a>）上创建一个仓库，取名为 <strong>cv-actions</strong>，接着选择一个 <strong>LICENSE</strong>（如 GNU GPL v3.0，相关介绍见：<a href="https://zhuanlan.zhihu.com/p/56759711" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/56759711</a>） 和 <strong>gitignore</strong>（选择 Python）。然后选择 <code>settings</code>：</p>
 <p><img src="/zh-CN/e6d6f9e7/set.png" alt="图1 GitHub 的 settings"></p>
 <p>往下滑动鼠标，找到 GitHub Pages，选择主题，随后便会生成一个网址：</p>
 <p><img src="/zh-CN/e6d6f9e7/GithubPages.png" alt="图2 GitHub Pages"></p>
 <p>接着，填写项目的简介：</p>
 <p><img src="/zh-CN/e6d6f9e7/edit.png" alt="图 3 编写项目简介"></p>
-<p>第 2 步：将远端的项目克隆到本地。首先，按照下图操作获取项目的远程仓库地址：</p>
+<p>第 2 步：将远端的项目克隆到本地。首先，按照下图操作获取项目的远程仓库地址（<a href="https://github.com/xinetzone/cv-actions.git" target="_blank" rel="noopener">https://github.com/xinetzone/cv-actions.git</a>）：</p>
 <p><img src="/zh-CN/e6d6f9e7/clone.png" alt="图4 获取远程仓库地址"></p>
+<p>第 3 步：在本地电脑端打开 vscode 并在终端输入：</p>
+<pre class="line-numbers language-sh"><code class="language-sh">$ git clone https://github.com/xinetzone/cv-actions.git
+$ cd cv-actions/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>这样便在本地端拥有一个 cv-actions 的副本。</p>
+<h3 id="1-2-修改-README"><a href="#1-2-修改-README" class="headerlink" title="1.2 修改 README"></a>1.2 修改 README</h3><p>对于一个项目来说，README（自述文档）是十分重要的。自述文件不仅仅是用于说明人们如何使用你的项目，还要解释你的项目为什么重要，以及它可以为你的用户做什么。在您的自述文件中，尝试回答以下问题：</p>
+<ul>
+<li>What：这个项目做什么？</li>
+<li>Why：为什么这个项目有用？</li>
+<li>How：如何开始？</li>
+<li>Help：如果需要，我可以在哪里获得更多的帮助？</li>
+<li>Who：谁维护和参与项目？</li>
+</ul>
+<p>下面参考<a href="https://github.com/PurpleBooth" target="_blank" rel="noopener">@PurpleBooth</a> 的 <a href="https://gist.github.com/PurpleBooth/109311bb0361f32d87a2" target="_blank" rel="noopener">README 模板</a> 编写如下自述文档：</p>
+<pre class="line-numbers language-md"><code class="language-md"># 动手实践计算机视觉
+
+[![GitHub issues](https://img.shields.io/github/issues/xinetzone/cv-actions)](https://github.com/xinetzone/cv-actions/issues) [![GitHub forks](https://img.shields.io/github/forks/xinetzone/cv-actions)](https://github.com/xinetzone/cv-actions/network) [![GitHub stars](https://img.shields.io/github/stars/xinetzone/cv-actions)](https://github.com/xinetzone/cv-actions/stargazers) [![GitHub license](https://img.shields.io/github/license/xinetzone/cv-actions)](https://github.com/xinetzone/cv-actions/blob/master/LICENSE) [![HitCount](http://hits.dwyl.io/xinetzone/cv-actions.svg)](http://hits.dwyl.io/xinetzone/cv-actions) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/cv) ![repo size](https://img.shields.io/github/repo-size/xinetzone/cv-actions.svg) [![contributors](https://img.shields.io/github/contributors/xinetzone/cv-actions.svg)](https://github.com/xinetzone/cv-actions/graphs/contributors) [![watcher](https://img.shields.io/github/watchers/xinetzone/cv-actions.svg)](https://github.com/xinetzone/cv-actions/watchers)
+
+打造一个用于学习和探索计算机视觉的社区。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>其中的图标可以参考 <a href="https://xinetzone.github.io/zh-CN/f7c6a6b8.html">github 编写 README 时如何获取 fork 等图标</a>（<a href="https://xinetzone.github.io/zh-CN/f7c6a6b8.html">https://xinetzone.github.io/zh-CN/f7c6a6b8.html</a>）进行设计。</p>
+<p>接着创建一些目录，这些目录均代表不同的功能。在项目根目录打开终端并输入：</p>
+<pre class="line-numbers language-sh"><code class="language-sh">mkdir data draft models outputs app notebook<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li><code>data/</code>: 数据的存放</li>
+<li><code>models/</code>: 模型的参数存储</li>
+<li><code>outputs/</code>: 模型的输出结果</li>
+<li><code>app/</code>：存放相关的 API</li>
+<li><code>notebook/</code>：存放 jupyter notebook 等相关的文件</li>
+<li><code>draft/</code>：(可以放置在任何位置)存放一些不成熟的或者未开发完成的一些相关内容，不被上传到 github</li>
+</ul>
+<p>其中 <code>data/</code>，<code>models/</code>，<code>draft/</code> 加入到 <code>.gitignore</code> 不被 git 管理。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -739,10 +767,9 @@
 本章导航：
 
 在 GitHub 上创建个人项目
-将远程仓库与个人项目建立联系
 利用 Git 子模块组织子项目
 
-1 创建个人项目由于构建个人或者公司的私有服务器涉及的知识
+1 创建个人项目由于构建个人或者公司的私有服务器涉及的知识点太多，本文考虑以 GitHu
                         
                     </div>
                     <div class="publish-info">
@@ -765,12 +792,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Git/" target="_blank">
-                        <span class="chip bg-color">Git</span>
+                    <a href="/tags/git/" target="_blank">
+                        <span class="chip bg-color">git</span>
                     </a>
                     
-                    <a href="/tags/GitHub/" target="_blank">
-                        <span class="chip bg-color">GitHub</span>
+                    <a href="/tags/github/" target="_blank">
+                        <span class="chip bg-color">github</span>
                     </a>
                     
                 </div>
@@ -944,7 +971,7 @@
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">10.5k</span>&nbsp;字
+                class="white-color">11.1k</span>&nbsp;字
             
             
             
