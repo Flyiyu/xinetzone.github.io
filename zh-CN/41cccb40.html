@@ -469,18 +469,18 @@ $ npm -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
 <h2 id="创建-GitHub-Pages"><a href="#创建-GitHub-Pages" class="headerlink" title="创建 GitHub Pages"></a>创建 GitHub Pages</h2><p>在你的 GitHub 主页打开如下界面：</p>
 <p><img src="/zh-CN/41cccb40/1114626-aa71be3d8b914371.png" alt="创建 repo"></p>
 <p>然后如下图所示，输入自己的项目名字，后面一定要加 <code>.github.io</code> 后缀，<code>README</code>初始化也要勾上。名称一定要和你的github名字完全一样，比如你 <code>github</code> 名字叫<code>abc</code>，那么仓库名字一定要是 <code>abc.github.io</code>。</p>
-<p><img src="/zh-CN/41cccb40/1114626-f796295247fb7aba.png" alt></p>
+<p><img src="/zh-CN/41cccb40/1114626-f796295247fb7aba.png" alt=""></p>
 <p>然后项目就建成了，点击 <code>Settings</code>，向下拉到最后有个 <code>GitHub Pages</code>，点击 <code>Choose a theme</code> 选择一个主题。将 <code>GitHub Pages</code> 生成的网址复制到如下位置：</p>
-<p><img src="/zh-CN/41cccb40/1114626-ae9a9d173799c870.png" alt></p>
+<p><img src="/zh-CN/41cccb40/1114626-ae9a9d173799c870.png" alt=""></p>
 <p>点击网址 <a href="https://xinetzone.github.io/">https://xinetzone.github.io/</a>，便会显示：</p>
-<p><img src="/zh-CN/41cccb40/1114626-93636579128421e5.png" alt></p>
+<p><img src="/zh-CN/41cccb40/1114626-93636579128421e5.png" alt=""></p>
 <p>此页面的内容是由 <a href="https://github.com/xinetzone" target="_blank" rel="noopener">xinetzone</a>/<strong><a href="https://github.com/xinetzone/xinetzone.github.io" target="_blank" rel="noopener">xinetzone.github.io</a></strong> 根目录的 <code>README.md</code> 提供的。</p>
-<p><img src="/zh-CN/41cccb40/1114626-97cfccb76ec79543.png" alt></p>
+<p><img src="/zh-CN/41cccb40/1114626-97cfccb76ec79543.png" alt=""></p>
 <p>使用 vscode 打开本地的一个文件夹：</p>
-<p><img src="/zh-CN/41cccb40/1114626-2126a847e377b804.png" alt></p>
+<p><img src="/zh-CN/41cccb40/1114626-2126a847e377b804.png" alt=""></p>
 <p>选择 Git Bash 作为默认：</p>
-<p><img src="/zh-CN/41cccb40/1114626-f0f238bc6f947912.png" alt></p>
-<p><img src="/zh-CN/41cccb40/1114626-a3e18c31da2eeb5a.png" alt></p>
+<p><img src="/zh-CN/41cccb40/1114626-f0f238bc6f947912.png" alt=""></p>
+<p><img src="/zh-CN/41cccb40/1114626-a3e18c31da2eeb5a.png" alt=""></p>
 <p>为了提高 npm 运行速度需要添加淘宝源：</p>
 <pre class="line-numbers language-sh"><code class="language-sh"> $ npm config set registry https://registry.npm.taobao.org<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>运行如下命令安装 hexo：</p>
@@ -495,7 +495,7 @@ $ cd docs/
 $ hexo init
 $ npm install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>其中 <code>hexo init</code> 为网站初始化环境，<code>npm install</code> 安装必备的组件，我们可以看到 <code>blog</code> 目录下生成如下目录：</p>
-<p><img src="/zh-CN/41cccb40/1114626-f1260417e24c3632.png" alt></p>
+<p><img src="/zh-CN/41cccb40/1114626-f1260417e24c3632.png" alt=""></p>
 <ul>
 <li><code>node_modules</code>: 依赖包</li>
 <li><code>public</code>：存放生成的页面，运行 <code>hexo g</code> 便会生成，而 <code>hexo clean</code> 便会删除</li>
@@ -505,9 +505,9 @@ $ npm install<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
 <li><code>_config.yml</code>: 博客的配置文件</li>
 </ul>
 <p>这样本地的网站配置也弄好啦，输入 <code>hexo g</code> 生成静态网页，然后输入 <code>hexo s</code> （hexo serve）打开本地服务器：</p>
-<p><img src="/zh-CN/41cccb40/1114626-77606c3fdfd2f043.png" alt></p>
+<p><img src="/zh-CN/41cccb40/1114626-77606c3fdfd2f043.png" alt=""></p>
 <p>这样便可以在 <code>http://localhost:4000</code> 预览网站了：</p>
-<p><img src="/zh-CN/41cccb40/1114626-3de8c569ca663fec.png" alt></p>
+<p><img src="/zh-CN/41cccb40/1114626-3de8c569ca663fec.png" alt=""></p>
 <p>使用 <code>Ctrl + C</code> 可以把服务关掉。</p>
 <h2 id="将-hexo-与-github-关联起来"><a href="#将-hexo-与-github-关联起来" class="headerlink" title="将 hexo 与 github 关联起来"></a>将 hexo 与 github 关联起来</h2><p>首先输入如下命令，配置 Git 的环境：</p>
 <pre class="line-numbers language-sh"><code class="language-sh">$ git config --global user.name  xinetzone
@@ -525,12 +525,12 @@ $ git config --global user.email xinzone@outlook.com<span aria-hidden="true" cla
   repository: https://github.com/xinetzone/xinetzone.github.io.git
   branch: master <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>其中  <code>repository</code> 可以通过如下方法获取：</p>
-<p><img src="/zh-CN/41cccb40/1114626-890059e5643e50f7.png" alt></p>
+<p><img src="/zh-CN/41cccb40/1114626-890059e5643e50f7.png" alt=""></p>
 <p><code>repository</code> 修改为你自己的 github 项目地址。接着需要先安装 <code>deploy-git</code>，也就是部署的命令，这样你才能用命令部署到 GitHub。接着 <code>hexo clean</code> 清除了你之前生成的东西，也可以不加。 <code>hexo g</code> 顾名思义，生成静态文章是 <code>hexo generate</code> 的缩写 <code>hexo deploy</code> 部署文章，可以用 <code>hexo d</code> 缩写：</p>
 <pre class="line-numbers language-sh"><code class="language-sh">$ npm install hexo-deployer-git --save
 $ hexo clean | hexo g | hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>这时打开你的 github.io（<a href="https://xinetzone.github.io/">https://xinetzone.github.io/</a>） 主页就能看到发布的文章：</p>
-<p><img src="/zh-CN/41cccb40/1114626-761726a5770eea11.png" alt></p>
+<p><img src="/zh-CN/41cccb40/1114626-761726a5770eea11.png" alt=""></p>
 <p>为了添加博客，需要：</p>
 <pre class="line-numbers language-sh"><code class="language-sh">$ hexo new post "博客名"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>然后打开 <code>blog\source\_posts</code> 的目录，可以发现下面多了一个文件夹和一个 <code>.md</code> 文件，一个用来存放你的图片等数据，另一个就是你的文章文件啦。</p>
@@ -564,7 +564,7 @@ timezone: Asia/Shanghai # 时区<span aria-hidden="true" class="line-numbers-row
 {% asset_img slug [title] %}
 {% asset_link slug [title] %}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>设置好之后便可以正常显示结果：</p>
-<p><img src="/zh-CN/41cccb40/2019-09-01-170438.png" alt></p>
+<p><img src="/zh-CN/41cccb40/2019-09-01-170438.png" alt=""></p>
 <p>可以看出，此时的标题与字体均发生了改变。</p>
 <p><strong>注意</strong>：<code></code> 中的 <code>title</code> 不可以为空值，如果想要省略，可以这样：<code></code>，即使用空格代替 <code>title</code>（注意 <code>slug</code> 后面有两个空格）。</p>
 <p>如果在执行 <code>hexo deploy</code> 后,出现 error deployer not found:github 的错误，请执行：</p>
@@ -1027,7 +1027,7 @@ timezone: Asia/Shanghai # 时区<span aria-hidden="true" class="line-numbers-row
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">11.1k</span>&nbsp;字
+                class="white-color">10.9k</span>&nbsp;字
             
             
             
