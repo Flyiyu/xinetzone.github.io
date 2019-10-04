@@ -14,7 +14,6 @@ updated: 2019-09-11 22:55:16
 
 - [ ] 一些数据集处理相关的 [datasetsome](https://dataloaderx.github.io/datasetsome/)
 - [ ] 一个项目的通用模板（python） [projects](https://xinetzone.github.io/projects/)
-- [ ] 一个可以开箱即用的 matery 博客主题 [xinet matery](https://xinetzone.github.io/matery/)
 - [ ] [cocoapi: coco 数据集 API](https://xinering.github.io/cocoapi/)
 - [ ] [Git 学习笔记](https://xinetzone.github.io/GitStudying/)
 - [ ] [动手实践计算机视觉](https://xinetzone.github.io/cv-actions/)
