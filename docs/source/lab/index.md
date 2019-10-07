@@ -17,6 +17,7 @@ updated: 2019-09-11 22:55:16
 - [ ] [cocoapi: coco 数据集 API](https://xinering.github.io/cocoapi/)
 - [ ] [Git 学习笔记](https://xinetzone.github.io/GitStudying/)
 - [ ] [动手实践计算机视觉](https://xinetzone.github.io/cv-actions/)
+- [ ] [知识大乱斗](https://xinetzone.github.io/anysome/)
 
 ## 他山之石
 
