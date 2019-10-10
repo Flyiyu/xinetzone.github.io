@@ -438,14 +438,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.7k
+                        3.7k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        10 分
+                        14 分
                     </div>
                     
                 
@@ -570,7 +570,58 @@ $ cd cv-actions/<span aria-hidden="true" class="line-numbers-rows"><span></span>
 
 - [ ] 利用 [pre-commit](https://pre-commit.com/) 自动部署代码的格式，使其自动化支持 pep8 等格式。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>至此，我们便在 GitHub 上完成了项目的构建工作。</p>
-<h2 id="2-使用-git-submodule-管理子项目"><a href="#2-使用-git-submodule-管理子项目" class="headerlink" title="2 使用 git submodule 管理子项目"></a>2 使用 git submodule 管理子项目</h2><script>
+<h2 id="2-使用-git-submodule-管理子项目"><a href="#2-使用-git-submodule-管理子项目" class="headerlink" title="2 使用 git submodule 管理子项目"></a>2 使用 git submodule 管理子项目</h2><p>参考资料：<a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules" target="_blank" rel="noopener">https://git-scm.com/book/en/v2/Git-Tools-Submodules</a>。</p>
+<p>情景：在您正在维护的项目（可记为 A）中存在一些子项目或者第三方库（可记为 B）。您不想在 A 中直接维护 B，希望 B 作为一个单独的项目进行管理，这种情况下便需要借助 Git 子模块工具了。Git 子模块工具将 B 作为 A 的一个子目录进行管理，使用 <code>git submodule</code> 来实现。下面以一个例子来说明如何使用子模块的。</p>
+<h3 id="2-1-开始使用子模块"><a href="#2-1-开始使用子模块" class="headerlink" title="2.1 开始使用子模块"></a>2.1 开始使用子模块</h3><ul>
+<li>前提：在 Github 上单独创建一个独立的项目<a href="https://xinetzone.github.io/image/">xinetzone/image</a>(<a href="https://xinetzone.github.io/image/">https://xinetzone.github.io/image/</a>)，该项目是一个数字图像处理的工具包。</li>
+<li>目标：在 <a href="https://xinetzone.github.io/cv-actions/">cv-actions</a> 项目中添加子项目 <a href="https://xinetzone.github.io/image/">image</a>。</li>
+</ul>
+<p>第 1 步：克隆 <a href="https://xinetzone.github.io/cv-actions/">cv-actions</a> 到个人电脑。即在终端输入：<code>git clone https://github.com/xinetzone/image.git</code>。<br>第 2 步：git glow 初始化，即在终端输入如下命令：</p>
+<pre class="line-numbers language-sh"><code class="language-sh">$ cd cv-actions
+$ git flow init<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>第 3 步：使用 git flow 创建并切换到新的分支 <code>feature/image</code>，即在命令行输入：</p>
+<pre class="line-numbers language-sh"><code class="language-sh">$ git flow feature start image<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>第 4 步：使用 <code>git submodule</code> 添加子项目 cv-actions 到目录 <code>app/</code> 之下，即在命令行输入：</p>
+<pre class="line-numbers language-sh"><code class="language-sh">$ cd app/
+$ git submodule add https://github.com/xinetzone/image<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>其中 <code>https://github.com/xinetzone/image</code> 是子项目 image 的网址。</p>
+<p>此时，如果您运行 <code>git status</code> 查看项目 cv-actions 的状态，便看到：</p>
+<p><img src="/zh-CN/e6d6f9e7/submodule.png" alt="图8 git 克隆子模块后的状态"></p>
+<p>从图8 可以看到此时在 <code>app/</code> 下新增目录 <code>image</code>，且在根目录新增文件 <code>.gitmodules</code>。</p>
+<p>其中 <code>.gitmodules</code> 文件记录了配置文件保存的项目 image 的 URL 与已经拉取的本地目录之间的映射：</p>
+<pre class="line-numbers language-.gitmodules"><code class="language-.gitmodules">[submodule "app/image"]
+  path = app/image
+  url = https://github.com/xinetzone/image<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>如果您有多个子模块需要被管理，<code>.gitmodules</code> 文件中就会有多条记录。虽然 <code>image/</code> 是 cv-actions 的工作目录的一个子目录，但是，git 并不会将其视作普通文件进行管理，而是将其作为一个整体当作子模块中的某个具体的提交进行管理。</p>
+<p>第 5 步：提交更改。为了让子模块 image 加入到 git 的历史（commit）之中，您需要将其提交：</p>
+<pre class="line-numbers language-sh"><code class="language-sh">$ cd .. # 回到根目录
+$ git commit -am '添加子模块 image'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>其中 <code>-am</code> 是 <code>-a -m</code> 的组合。</p>
+<p>第 6 步：推送项目到远端分支 feature/image。</p>
+<pre class="line-numbers language-sh"><code class="language-sh">$ git push origin feature/image<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="2-2-克隆含有子模块的项目"><a href="#2-2-克隆含有子模块的项目" class="headerlink" title="2.2 克隆含有子模块的项目"></a>2.2 克隆含有子模块的项目</h3><p>克隆含有子模块的项目一般有两种方法：</p>
+<ul>
+<li>方法1：<code>git clone URL</code></li>
+<li>方法2：<code>git clone --recursive URL</code></li>
+</ul>
+<p>下面先讨论如何使用方法1 克隆含有子模块的项目，首先使用语法 <code>git clone -b 分支名 URL</code> 克隆项目的指定分支。在终端运行：</p>
+<pre class="line-numbers language-sh"><code class="language-sh">$ git clone -b feature/image https://github.com/xinetzone/cv-actions
+$ cd cv-actions/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>此时，您进入 <code>app/image</code> 会发现其是一个空目录，这是因为含有子模块的项目需要进行初始化。初始化需要两步，具体操作是在 <code>app/image</code> 下面运行：</p>
+<pre class="line-numbers language-sh"><code class="language-sh">$ git submodule init
+$ git submodule update<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>其中 <code>git submodule init</code> 用于初始化本地配置，而 <code>git submodule update</code> 用于从项目 image 中抓取所有数据并检出（checked out）父项目中列出的合适的提交。使用 <code>git status</code> 查看当前状态：</p>
+<p><img src="/zh-CN/e6d6f9e7/9.png" alt="图9 查看 git submodule update 后的状态"></p>
+<p>从图9 可以看出，此时 image 与其上游 <code>origin/feature/image</code> 已经同步了。</p>
+<p>对于方法2，仅仅运行如下命令即可达到上述的同样效果：</p>
+<pre class="line-numbers language-sh"><code class="language-sh">$ git clone --recursive -b feature/image https://github.com/xinetzone/cv-actions<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="2-3-使用子模块"><a href="#2-3-使用子模块" class="headerlink" title="2.3 使用子模块"></a>2.3 使用子模块</h3><p>如果子模块的上游有的新的提交（commit），您想要获取更新，有两种方法：</p>
+<ol>
+<li>直接进入子模块所在目录 <code>app/image</code> 通过运行 <code>git fetch</code> 与 <code>git merge</code>，合并上游分支来更新本地代码。</li>
+<li>直接运行 <code>git submodule update --remote image</code> 获取上游分支来更新本地代码。</li>
+</ol>
+<h2 id="3-小结"><a href="#3-小结" class="headerlink" title="3 小结"></a>3 小结</h2><p>本文主要讨论了如何利用 Git 与 Github 创建属于自己的项目，同时也介绍了如何利用 <code>git submodule</code> 在大项目中管理小项目。</p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1029,7 +1080,7 @@ $ cd cv-actions/<span aria-hidden="true" class="line-numbers-rows"><span></span>
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">12.9k</span>&nbsp;字
+                class="white-color">13.9k</span>&nbsp;字
             
             
             
