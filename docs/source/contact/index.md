@@ -14,7 +14,6 @@ updated: 2019-09-11 07:25:21
 
 ## 友链
 
-刘新伟：
-
-- [简书](https://www.jianshu.com/u/4302480a3e8e)
-- [博客园](https://www.cnblogs.com/q735613050/)
+姓名|博客
+:-:|:-:
+刘新伟|[简书](https://www.jianshu.com/u/4302480a3e8e)-[博客园](https://www.cnblogs.com/q735613050/)
