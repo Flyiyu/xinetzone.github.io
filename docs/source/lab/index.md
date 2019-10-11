@@ -7,7 +7,7 @@ tags: [lab, 学习]
 date: 2019-09-11 22:55:16
 updated: 
 ---
-
+<!-- slide -->
 ## 欢迎进入水之界
 
 刘新伟的博客与AI：
@@ -18,7 +18,7 @@ updated:
 - [ ] [Git 学习笔记](https://xinetzone.github.io/GitStudying/)
 - [ ] [动手实践计算机视觉](https://xinetzone.github.io/cv-actions/)
 - [ ] [知识大乱斗](https://xinetzone.github.io/anysome/)
-
+<!-- slide -->
 ## 他山之石
 
 - [他说](/lab/他说.html)
