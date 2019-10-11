@@ -3,7 +3,6 @@ title: 混沌
 mathjax: false
 type: lab
 layout: lab
-tags: [lab, 学习]
 date: 2019-09-11 22:55:16
 updated: 
 ---
