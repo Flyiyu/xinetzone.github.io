@@ -4,17 +4,16 @@ mathjax: false
 type: lab
 layout: lab
 date: 2019-09-11 22:55:16
-updated: 
 ---
 <!-- slide -->
 ## 欢迎进入水之界
 
-刘新伟的博客与AI：
+刘新伟的博客与AI
 
 - 一些数据集处理相关的 [datasetsome](https://dataloaderx.github.io/datasetsome/)
 - 一个项目的通用模板（python） [projects](https://xinetzone.github.io/projects/)
 - [cocoapi: coco 数据集 API](https://xinering.github.io/cocoapi/)
-- [Git 学习笔记](https://xinetzone.github.io/GitStudying/)
+- [一个程序员的自我成长笔记](https://www.jianshu.com/nb/40234109)
 - [动手实践计算机视觉](https://xinetzone.github.io/cv-actions/)
 - [知识大乱斗](https://xinetzone.github.io/anysome/)
 <!-- slide -->
@@ -36,8 +35,10 @@ updated:
 - [Listen 1](http://listen1.github.io/listen1/)：一款优秀的音乐播放器。
 - [免费的多并发的文件下载与分享](https://xdown.org/index.htm)
 - [分享12个黑科技网站，每个都是十分良心](https://zhuanlan.zhihu.com/p/45586387)
-- [Python emoij 工具](https://pypi.org/project/emoji/) | [✂️ Copy and 📋 Paste Emoji 👍](http://getemoji.com/) 
-
+- [Python emoij 工具](https://pypi.org/project/emoji/) | [✂️ Copy and 📋 Paste Emoji 👍](http://getemoji.com/)
+- Snipaste [地址](https://zh.snipaste.com/)-[手册](https://docs.snipaste.com/zh-cn/)：一个好用的截图工具。
+- [Altair: Declarative Visualization in Python](https://altair-viz.github.io/index.html#altair-declarative-visualization-in-python "Permalink to this headline")
+- [Vega](https://vega.github.io/vega/)
 <!-- slide -->
 ## 信息交流
 

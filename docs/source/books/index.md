@@ -1,11 +1,9 @@
 ---
 title: 图书馆
 mathjax: false
-type: book
-layout: book
-lang: zh-CN
-date: 2019-10-11 20:58:26
-updated:
+type: books
+layout: books
+date: 2019-10-16 21:59:09
 ---
 
 欢迎分享优秀书籍！如果您能够提供书籍的亮点介绍那就太棒了。
