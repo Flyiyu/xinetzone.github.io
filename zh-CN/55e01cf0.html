@@ -5,9 +5,8 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Python3 之类型注解, MXNet Pytorch TensorFlow 刘新伟 计算机视觉 深度学习">
-    <meta name="description" content="参考资料：typing — 类型标注支持。
-0 引言：定义一个线段假设我们使用 Python 实现数学中的整点线段的概念，即 $L = [a,b]$, 且 $a,b \in Z$。使用 Python 可以这样写：
-class LineSeg">
+    <meta name="description" content="参考资料：typing — 类型标注支持 与 dataclasses — 数据类。
+0 引言：定义一个线段假设我们使用 Python 实现数学中的整点线段的概念，即 $L = [a,b]$, 且 $a,b \in Z$。使用 Python ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -551,14 +550,14 @@ class LineSeg">
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        982
+                        1.3k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        4 分
+                        5 分
                     </div>
                     
                 
@@ -574,7 +573,7 @@ class LineSeg">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>参考资料：<a href="https://docs.python.org/zh-cn/3.7/library/typing.html" target="_blank" rel="noopener">typing — 类型标注支持</a>。</p>
+                <p>参考资料：<a href="https://docs.python.org/zh-cn/3.7/library/typing.html" target="_blank" rel="noopener">typing — 类型标注支持</a> 与 <a href="https://docs.python.org/zh-cn/3.7/library/dataclasses.html" target="_blank" rel="noopener">dataclasses — 数据类</a>。</p>
 <h2 id="0-引言：定义一个线段"><a href="#0-引言：定义一个线段" class="headerlink" title="0 引言：定义一个线段"></a>0 引言：定义一个线段</h2><p>假设我们使用 Python 实现数学中的整点线段的概念，即 $L = [a,b]$, 且 $a,b \in Z$。使用 Python 可以这样写：</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">LineSegment</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> start<span class="token punctuation">,</span> end<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -684,7 +683,40 @@ fish<span class="token punctuation">.</span>__annotations__<span aria-hidden="tr
                 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'TypeWrong'</span><span class="token punctuation">)</span>
         <span class="token keyword">return</span> fn<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
     <span class="token keyword">return</span> wrapper<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="2-dataclasses-提供强大的类型注解机制"><a href="#2-dataclasses-提供强大的类型注解机制" class="headerlink" title="2 dataclasses 提供强大的类型注解机制"></a>2 dataclasses 提供强大的类型注解机制</h2><script>
+<h2 id="2-dataclass-提供强大的类型注解机制"><a href="#2-dataclass-提供强大的类型注解机制" class="headerlink" title="2 dataclass 提供强大的类型注解机制"></a>2 dataclass 提供强大的类型注解机制</h2><p>我们先看看 <code>dataclass</code> 的参数：</p>
+<table>
+<thead>
+<tr>
+<th align="left">key</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>init</code></td>
+<td align="left">指定是否自动生成<code>__init__</code>，如果已经有定义同名方法则忽略这个值，也就是指定为<code>True</code>也不会自动生成</td>
+</tr>
+<tr>
+<td align="left"><code>repr</code></td>
+<td align="left">同<code>init</code>，指定是否自动生成<code>__repr__</code>；自动生成的打印格式为<code>class_name(arrt1:value1, attr2:value2, ...)</code></td>
+</tr>
+<tr>
+<td align="left"><code>eq</code></td>
+<td align="left">同<code>init</code>，指定是否生成<code>__eq__</code>；自动生成的方法将按属性在类内定义时的顺序逐个比较，全部的值相同才会返回<code>True</code></td>
+</tr>
+<tr>
+<td align="left"><code>order</code></td>
+<td align="left">自动生成<code>__lt__</code>，<code>__le__</code>，<code>__gt__</code>，<code>__ge__</code>，比较方式与<code>eq</code>相同；如果<code>order</code>指定为<code>True</code>而<code>eq</code>指定为<code>False</code>，将引发<code>ValueError</code>；如果已经定义同名函数，将引发<code>TypeError</code></td>
+</tr>
+<tr>
+<td align="left"><code>unsafehash</code></td>
+<td align="left">如果是<code>False</code>，将根据<code>eq</code>和<code>frozen</code>参数来生成<code>__hash__</code>: 1.<code>eq</code>和<code>frozen</code>都为<code>True</code>，<code>__hash__</code>将会生成 2.<code>eq</code>为<code>True</code>而<code>frozen</code>为<code>False</code>，<code>__hash__</code>被设为<code>None</code> 3.<code>eq</code>为<code>False</code>，<code>frozen</code>为<code>True</code>，<code>__hash__</code>将使用超类（<code>object</code>）的同名属性（通常就是基于对象<code>id</code>的<code>hash</code>） 当设置为<code>True</code>时将会根据类属性自动生成<code>__hash__</code>，然而这是不安全的，因为这些属性是默认可变的,这会导致<code>hash</code>的不一致，所以除非能保证对象属性不可随意改变，否则应该谨慎地设置该参数为<code>True</code></td>
+</tr>
+<tr>
+<td align="left"><code>frozen</code></td>
+<td align="left">设为<code>True</code>时对<code>field</code>赋值将会引发错误，对象将是不可变的，如果已经定义了<code>__setattr__</code>和<code>__delattr__</code>将会引发<code>TypeError</code></td>
+</tr>
+</tbody></table>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1259,7 +1291,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
 
-                class="white-color">14.9k</span>&nbsp;字
+                class="white-color">15.3k</span>&nbsp;字
 
             
 
