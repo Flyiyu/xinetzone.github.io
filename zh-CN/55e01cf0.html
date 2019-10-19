@@ -550,14 +550,14 @@
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.3k
+                        1.4k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        5 分
+                        6 分
                     </div>
                     
                 
@@ -716,6 +716,15 @@ fish<span class="token punctuation">.</span>__annotations__<span aria-hidden="tr
 <td align="left">设为<code>True</code>时对<code>field</code>赋值将会引发错误，对象将是不可变的，如果已经定义了<code>__setattr__</code>和<code>__delattr__</code>将会引发<code>TypeError</code></td>
 </tr>
 </tbody></table>
+<p>注意：最好去掉了<code>__init__</code>方法，以确保 <code>dataclass</code> 装饰器可以添加它生成的对应方法。<br>如果要覆盖 <code>__init__</code>，我们将失去 <code>dataclass</code> 的优势，因此，如果要处理任何附加功能可以使用新的 dunder 方法：<code>__post_init__</code>，让我们看看<code>__post_init__</code>方法对于我们的包装类来说是什么样子的：</p>
+<pre class="line-numbers language-python"><code class="language-python">@dataclass
+<span class="token keyword">class</span> <span class="token class-name">C</span><span class="token punctuation">:</span>
+    a<span class="token punctuation">:</span> float
+    b<span class="token punctuation">:</span> float
+    c<span class="token punctuation">:</span> float <span class="token operator">=</span> field<span class="token punctuation">(</span>init<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">__post_init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>c <span class="token operator">=</span> self<span class="token punctuation">.</span>a <span class="token operator">+</span> self<span class="token punctuation">.</span>b<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1291,7 +1300,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
 
-                class="white-color">15.3k</span>&nbsp;字
+                class="white-color">15.4k</span>&nbsp;字
 
             
 
