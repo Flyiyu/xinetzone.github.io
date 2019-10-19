@@ -550,14 +550,14 @@
                     
                     <div class="info-break-policy">
                         <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.4k
+                        1.7k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        6 分
+                        7 分
                     </div>
                     
                 
@@ -683,7 +683,8 @@ fish<span class="token punctuation">.</span>__annotations__<span aria-hidden="tr
                 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'TypeWrong'</span><span class="token punctuation">)</span>
         <span class="token keyword">return</span> fn<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
     <span class="token keyword">return</span> wrapper<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="2-dataclass-提供强大的类型注解机制"><a href="#2-dataclass-提供强大的类型注解机制" class="headerlink" title="2 dataclass 提供强大的类型注解机制"></a>2 dataclass 提供强大的类型注解机制</h2><p>我们先看看 <code>dataclass</code> 的参数：</p>
+<h2 id="2-dataclass-提供强大的类型注解机制"><a href="#2-dataclass-提供强大的类型注解机制" class="headerlink" title="2 dataclass 提供强大的类型注解机制"></a>2 dataclass 提供强大的类型注解机制</h2><p><code>dataclass</code> 的定义位于 <a href="https://www.python.org/dev/peps/pep-0557/" target="_blank" rel="noopener">PEP-557</a>，一个 dataclass 是指“一个带有默认值的可变的 <a href="https://docs.python.org/3/library/collections.html?highlight=namedtuple#collections.namedtuple" target="_blank" rel="noopener">namedtuple</a>”，广义的定义就是有一个类，它的属性均可公开访问，可以带有默认值并能被修改，而且类中含有与这些属性相关的类方法，那么这个类就可以称为 <code>dataclass</code>，再通俗点讲，<code>dataclass</code> 就是一个含有数据及操作数据方法的容器。</p>
+<p>我们先看看 <code>dataclass</code> 的参数：</p>
 <table>
 <thead>
 <tr>
@@ -708,23 +709,50 @@ fish<span class="token punctuation">.</span>__annotations__<span aria-hidden="tr
 <td align="left">自动生成<code>__lt__</code>，<code>__le__</code>，<code>__gt__</code>，<code>__ge__</code>，比较方式与<code>eq</code>相同；如果<code>order</code>指定为<code>True</code>而<code>eq</code>指定为<code>False</code>，将引发<code>ValueError</code>；如果已经定义同名函数，将引发<code>TypeError</code></td>
 </tr>
 <tr>
-<td align="left"><code>unsafehash</code></td>
-<td align="left">如果是<code>False</code>，将根据<code>eq</code>和<code>frozen</code>参数来生成<code>__hash__</code>: 1.<code>eq</code>和<code>frozen</code>都为<code>True</code>，<code>__hash__</code>将会生成 2.<code>eq</code>为<code>True</code>而<code>frozen</code>为<code>False</code>，<code>__hash__</code>被设为<code>None</code> 3.<code>eq</code>为<code>False</code>，<code>frozen</code>为<code>True</code>，<code>__hash__</code>将使用超类（<code>object</code>）的同名属性（通常就是基于对象<code>id</code>的<code>hash</code>） 当设置为<code>True</code>时将会根据类属性自动生成<code>__hash__</code>，然而这是不安全的，因为这些属性是默认可变的,这会导致<code>hash</code>的不一致，所以除非能保证对象属性不可随意改变，否则应该谨慎地设置该参数为<code>True</code></td>
-</tr>
-<tr>
 <td align="left"><code>frozen</code></td>
 <td align="left">设为<code>True</code>时对<code>field</code>赋值将会引发错误，对象将是不可变的，如果已经定义了<code>__setattr__</code>和<code>__delattr__</code>将会引发<code>TypeError</code></td>
 </tr>
 </tbody></table>
-<p>注意：最好去掉了<code>__init__</code>方法，以确保 <code>dataclass</code> 装饰器可以添加它生成的对应方法。<br>如果要覆盖 <code>__init__</code>，我们将失去 <code>dataclass</code> 的优势，因此，如果要处理任何附加功能可以使用新的 dunder 方法：<code>__post_init__</code>，让我们看看<code>__post_init__</code>方法对于我们的包装类来说是什么样子的：</p>
-<pre class="line-numbers language-python"><code class="language-python">@dataclass
-<span class="token keyword">class</span> <span class="token class-name">C</span><span class="token punctuation">:</span>
-    a<span class="token punctuation">:</span> float
-    b<span class="token punctuation">:</span> float
-    c<span class="token punctuation">:</span> float <span class="token operator">=</span> field<span class="token punctuation">(</span>init<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+<p>参数 <code>unsafehash</code> 的使用比较复杂，当设置为<code>unsafehash=True</code>时将会根据类属性自动生成<code>__hash__</code>，然而这是不安全的，因为这些属性是默认可变的,这会导致<code>hash</code>的不一致，所以除非能保证对象属性不可随意改变，否则应该谨慎地设置该参数为<code>True</code>。对于 <code>unsafehash=False</code> 的情况将根据<code>eq</code>和<code>frozen</code>参数来生成<code>__hash__</code>，下面单独列出：</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数设置</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>eq=True,frozen=True</code></td>
+<td align="left"><code>__hash__</code>将会生成</td>
+</tr>
+<tr>
+<td align="left"><code>eq=True,frozen=False</code></td>
+<td align="left"><code>__hash__</code>将被设为<code>None</code></td>
+</tr>
+<tr>
+<td align="left"><code>eq=False,frozen=True</code></td>
+<td align="left"><code>__hash__</code>将使用超类（<code>object</code>）的同名属性（通常就是基于对象<code>id</code>的<code>hash</code>）</td>
+</tr>
+</tbody></table>
+<p>注意：最好去掉了<code>__init__</code>方法，以确保 <code>dataclass</code> 装饰器可以添加它生成的对应方法。<br>如果要覆盖 <code>__init__</code>，我们将失去 <code>dataclass</code> 的优势，因此，如果要处理任何附加功能可以使用新的 dunder 方法：<code>__post_init__</code>，让我们看看<code>__post_init__</code>方法对于我们的包装类来说是什么样子的。</p>
+<p>由于 Python 支持中文作为变量名、类名、函数名等，所以，我可以这样定义一个 Python 类：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> dataclasses <span class="token keyword">import</span> dataclass
 
-    <span class="token keyword">def</span> <span class="token function">__post_init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>c <span class="token operator">=</span> self<span class="token punctuation">.</span>a <span class="token operator">+</span> self<span class="token punctuation">.</span>b<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+@dataclass
+<span class="token keyword">class</span> 清单<span class="token punctuation">:</span>
+    名称<span class="token punctuation">:</span> str
+    单价<span class="token punctuation">:</span> float
+    数量<span class="token punctuation">:</span> int<span class="token operator">=</span><span class="token number">0</span>
+
+    <span class="token keyword">def</span> <span class="token function">__post_init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> float<span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>花费成本 <span class="token operator">=</span> self<span class="token punctuation">.</span>单价 <span class="token operator">*</span> self<span class="token punctuation">.</span>数量
+
+书籍 <span class="token operator">=</span> 清单<span class="token punctuation">(</span><span class="token string">'书籍'</span><span class="token punctuation">,</span> <span class="token number">10.0</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'{书籍}，花费的成本{书籍.花费成本}元'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>输出结果：</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token function">清单</span><span class="token punctuation">(</span>名称<span class="token operator">=</span><span class="token string">'书籍'</span><span class="token punctuation">,</span> 单价<span class="token operator">=</span><span class="token number">10.0</span><span class="token punctuation">,</span> 数量<span class="token operator">=</span><span class="token number">7</span><span class="token punctuation">)</span>，花费的成本<span class="token number">70.0</span>元<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>上面的代码模拟了出售商品的清单，整个代码看起来都很清爽。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1300,7 +1328,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
 
-                class="white-color">15.4k</span>&nbsp;字
+                class="white-color">15.6k</span>&nbsp;字
 
             
 
