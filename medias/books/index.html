@@ -4,8 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="标签: github, MXNet Pytorch TensorFlow 刘新伟 计算机视觉 深度学习">
-    <meta name="description" content="标签: github | 上善若水">
+    <meta name="keywords" content="图书馆, MXNet Pytorch TensorFlow 刘新伟 计算机视觉 深度学习">
+    <meta name="description" content="图书馆 | 上善若水">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>标签: github | 上善若水</title>
+    <title>图书馆 | 上善若水</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -434,168 +434,72 @@
 </div>
 
 <main class="content">
-
-    
-
-<div id="tags" class="container chip-container">
-    <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
-            </div>
-            <div class="tag-chips">
-                
-                
-                <a href="/tags/github-pages/" title="github pages: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="github pages" style="background-color: #F9EBEA;">github pages
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/hexo/" title="hexo: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="hexo" style="background-color: #F5EEF8;">hexo
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/typing/" title="typing: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="typing" style="background-color: #D5F5E3;">typing
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/dataclass/" title="dataclass: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="dataclass" style="background-color: #E8F8F5;">dataclass
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/git/" title="git: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="git" style="background-color: #FEF9E7;">git
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/github/" title="github: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            data-tagname="github" style="background-color: #F8F9F9;">github
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/README/" title="README: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="README" style="background-color: #82E0AA;">README
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/开源项目/" title="开源项目: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="开源项目" style="background-color: #D7BDE2;">开源项目
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
+    <div id="contact" class="container chip-container">
+        <div class="card">
+            <div class="card-content">
+                <div class="tag-title center-align">
+                    <i class="fas fa-book"></i>&nbsp;&nbsp;书籍
+                </div>
+                <p>欢迎分享优秀书籍！如果您能够提供书籍的亮点介绍那就太棒了。</p>
+<h2 id="优秀书籍"><a href="#优秀书籍" class="headerlink" title="优秀书籍"></a>优秀书籍</h2><ul>
+<li><a href="https://python3-cookbook.readthedocs.io/zh_CN/latest/" target="_blank" rel="noopener">Python Cookbook 3rd Edition Documentation中文版</a></li>
+</ul>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
         </div>
-    </div>
+        <div class="card">
+            
+            <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
 </div>
 
-    
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '1b8884598f156bd360c9',
+        clientSecret: '41f6fed8953ec0140ebaf146d5cca050cd80e7e6',
+        repo: 'xinetzone.github.io',
+        owner: 'xinetzone',
+        admin: "xinetzone",
+        id: '2019-10-16T21-59-09',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
 
-    <article id="articles" class="container articles">
-        <div class="row tags-posts">
+    gitalk.render('gitalk-container');
+</script>
             
+
             
-            <div class="article tag-post col s12 m6 l4" data-tags="git, github" data-aos="fade-up">
-                <div class="card">
-                    <a href="/zh-CN/e6d6f9e7.html">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="构建属于自己的项目">
-                            
-                            <span class="card-title">构建属于自己的项目</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-18
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/项目/" class="post-category">
-                                项目
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
             
+
             
-            <div class="article tag-post col s12 m6 l4" data-tags="git, github" data-aos="fade-up">
-                <div class="card">
-                    <a href="/zh-CN/ad2d8036.html">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="计算机视觉入门必备工具">
-                            
-                            <span class="card-title">计算机视觉入门必备工具</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-14
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/教程/" class="post-category">
-                                教程
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
             
         </div>
-    </article>
+    </div>
 </main>
-
-
 
 
     <footer class="page-footer bg-color">
