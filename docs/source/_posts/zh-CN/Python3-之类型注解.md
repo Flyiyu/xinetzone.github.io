@@ -8,7 +8,7 @@ comments: true
 lang: zh-CN
 summary: 本文主要介绍如何注解 Python，方便代码的审查。
 tags: [typing, dataclass]
-categories: PytHon
+categories: Python
 abbrlink: 55e01cf0
 date: 2019-10-18 22:11:21
 updated:
