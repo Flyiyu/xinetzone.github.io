@@ -8,8 +8,30 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>温州大学 | 应用数学 | 深度学习</description>
-    <pubDate>Mon, 28 Oct 2019 06:41:29 GMT</pubDate>
+    <pubDate>Tue, 10 Dec 2019 15:52:47 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>测试图片上传</title>
+      <link>https://xinetzone.github.io/zh-CN/79a6148d.html</link>
+      <guid>https://xinetzone.github.io/zh-CN/79a6148d.html</guid>
+      <pubDate>Tue, 10 Dec 2019 15:46:38 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;测试上传图片&quot;&gt;&lt;a href=&quot;#测试上传图片&quot; class=&quot;headerlink&quot; title=&quot;测试上传图片&quot;&gt;&lt;/a&gt;测试上传图片&lt;/h2&gt;&lt;p&gt;上传图片使用如下格式：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers
+          
+        
+      
+      </description>
+      
+      
+      <comments>https://xinetzone.github.io/zh-CN/79a6148d.html#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Python3 之类型注解</title>
